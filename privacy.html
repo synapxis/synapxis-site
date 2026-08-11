@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>プライバシーポリシー・情報セキュリティ基本方針｜株式会社SynapXis</title>
+<meta name="description" content="株式会社SynapXisの個人情報保護方針および情報セキュリティ基本方針。取得する情報、利用目的、第三者提供、安全管理措置、開示請求の手続きについて。">
+<link rel="canonical" href="https://synapxis.jp/privacy.html">
+<meta name="robots" content="index, follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  color-scheme:light dark;
+  --navy:#0D2340;--navy-deep:#081A31;--brass-text:#8A6636;
+  --paper:#F7F5F0;--paper-warm:#EFECE4;--brass:#B08D57;--blue:#2EA6FF;--blue-tint:#D5EDFF;
+  --ink:#1C2430;--muted:#5E6B7A;--rule:rgba(13,35,64,.14);
+  /* 背景・文字はここで切り替える（--paper は紺地の上の文字色として固定で使う） */
+  --bg:#F7F5F0;--bg-alt:#EFECE4;--surface:#F7F5F0;--heading:#0D2340;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#0E1721;--bg-alt:#14202C;--surface:#14202C;
+    --heading:#DEE9F7;--ink:#E4EAF2;--muted:#A0AEBD;
+    --rule:rgba(213,237,255,.16);--brass-text:#D3AA6C;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background-color:var(--bg)}
+body{
+  background-color:var(--bg);color:var(--ink);
+  font-family:"Noto Sans JP",system-ui,sans-serif;
+  font-size:15.5px;line-height:2;-webkit-font-smoothing:antialiased;
+  font-feature-settings:"palt" 1;
+}
+.wrap{max-width:840px;margin:0 auto;padding:0 28px}
+header{background-color:var(--bg);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);position:sticky;top:0;z-index:50}
+.bar{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--heading)}
+.brand svg{width:26px;height:26px;display:block;flex:none}
+.brand b{font-family:"Noto Serif JP",serif;font-size:19px;font-weight:600;letter-spacing:.04em}
+.back{font-size:13.5px;color:var(--muted);text-decoration:none;border-bottom:1px solid transparent}
+.back:hover{color:var(--heading);border-bottom-color:var(--brass)}
+
+.head{background-color:var(--navy);color:var(--paper);padding:64px 0 56px}
+.label{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-tint);opacity:.75}
+h1{font-family:"Noto Serif JP",serif;font-weight:600;font-size:clamp(23px,3.6vw,32px);line-height:1.6;margin-top:16px}
+
+main{padding:64px 0 80px}
+h2{
+  font-family:"Noto Serif JP",serif;font-weight:600;font-size:20px;line-height:1.6;
+  color:var(--heading);margin:56px 0 20px;padding-bottom:12px;border-bottom:1px solid var(--rule);
+}
+h2:first-of-type{margin-top:0}
+h3{font-size:15.5px;font-weight:500;color:var(--heading);margin:28px 0 8px}
+p{color:var(--muted);margin-bottom:16px}
+ul,ol{color:var(--muted);margin:0 0 16px 1.4em}
+li{margin-bottom:6px}
+.lead{font-size:15.5px;color:var(--muted);margin-bottom:8px}
+.meta{
+  margin-top:56px;padding-top:24px;border-top:1px solid var(--rule);
+  font-size:13.5px;color:var(--muted);
+}
+.box{
+  background:var(--bg-alt);border-left:3px solid var(--brass);
+  padding:22px 24px;margin:24px 0;font-size:14.5px;color:var(--muted);
+}
+.box p:last-child{margin-bottom:0}
+a{color:var(--heading)}
+a:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+footer{background-color:var(--navy-deep);color:rgba(247,245,240,.5);font-size:12.5px;padding:26px 0}
+.fbar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+.fbar a{color:rgba(247,245,240,.66);text-decoration:none;border-bottom:1px solid rgba(176,141,87,.5)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+@media print{
+  :root{--bg:#fff;--bg-alt:#fff;--surface:#fff;--heading:#0D2340;--ink:#1C2430;--muted:#3F4B58;--rule:rgba(13,35,64,.28);--brass-text:#7A5A2C}
+  header{position:static;border-bottom:1px solid var(--rule)}
+  #net{display:none}
+  section,.head,.cta{padding:28px 0;break-inside:avoid}
+  h2,h3{break-after:avoid}
+  .svc,.flow,.approach,.trio,.mv,.career,.entries{break-inside:avoid}
+  a{text-decoration:none}
+  footer{color:#333}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><g fill="#2EA6FF">
+        <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85"/>
+        <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(90 12 12)"/>
+        <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(180 12 12)"/>
+        <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(270 12 12)"/>
+      </g></svg>
+      <b>SynapXis</b>
+    </a>
+    <a class="back" href="index.html">トップへ戻る</a>
+  </div>
+</header>
+
+<div class="head">
+  <div class="wrap">
+    <p class="label">Privacy &amp; Security</p>
+    <h1>プライバシーポリシー<br>情報セキュリティ基本方針</h1>
+  </div>
+</div>
+
+<main>
+<div class="wrap">
+
+<h2>プライバシーポリシー</h2>
+
+<p class="lead">株式会社SynapXis（以下「当社」）は、データの分析および利活用を事業とする者として、個人情報の保護が事業の前提であると考えています。個人情報の保護に関する法律その他の関係法令およびガイドラインを遵守し、以下のとおり取り扱います。</p>
+
+<h3>1. 事業者の名称および所在地</h3>
+<ul>
+  <li>名称：株式会社SynapXis</li>
+  <li>所在地：〒143-0023　東京都大田区山王2-5-6　SANNO BRIDGE C02</li>
+  <li>代表者：代表取締役　山口 敬人</li>
+  <li>個人情報保護管理責任者：代表取締役</li>
+</ul>
+
+<h3>2. 取得する個人情報</h3>
+<p>当社は、以下の方法により個人情報を取得します。</p>
+<ul>
+  <li>お問い合わせフォーム、電子メール、電話、名刺交換等を通じてご提供いただく、氏名、会社名、部署、役職、電話番号、メールアドレス、お問い合わせ内容</li>
+  <li>業務の受託にあたり、お客様からお預かりするデータに含まれる情報</li>
+</ul>
+
+<h3>3. 利用目的</h3>
+<ul>
+  <li>お問い合わせ、ご相談への対応</li>
+  <li>業務の遂行、成果物の作成および報告</li>
+  <li>契約の履行、請求および支払いに関する事務</li>
+  <li>当社のサービスに関するご案内（ご本人の求めがあれば停止します）</li>
+</ul>
+<p>当社は、あらかじめご本人の同意を得ることなく、上記の目的の範囲を超えて個人情報を取り扱いません。</p>
+
+<h3>4. 受託業務におけるデータの取扱い</h3>
+<p>お客様からお預かりするデータについては、以下を原則とします。</p>
+<ul>
+  <li>個人を特定する必要のない分析においては、個人を識別できない状態に加工されたデータでの受領を原則とします。</li>
+  <li>お預かりしたデータは、当該業務の目的の範囲内でのみ利用し、契約に定めのない目的には利用しません。</li>
+  <li>業務終了後は、契約に定める期間内に、お客様の指示に従い返却または消去します。</li>
+  <li>分析の過程で作成した手法、モデル、知見の帰属については、個別の契約において定めます。</li>
+</ul>
+
+<h3>5. 第三者への提供</h3>
+<p>当社は、次の場合を除き、あらかじめご本人の同意を得ることなく個人情報を第三者に提供しません。</p>
+<ul>
+  <li>法令に基づく場合</li>
+  <li>人の生命、身体または財産の保護のために必要であって、ご本人の同意を得ることが困難な場合</li>
+  <li>国の機関等の法令の定める事務に協力する必要がある場合であって、同意を得ることにより当該事務の遂行に支障を及ぼすおそれがある場合</li>
+</ul>
+
+<h3>6. 業務の委託および外部サービスの利用</h3>
+<p>当社は、業務の遂行に必要な範囲で、個人情報の取扱いを外部に委託し、または外部の情報システム（クラウドサービス等）を利用することがあります。この場合、委託先および利用するサービスの安全管理体制を確認し、必要かつ適切な監督を行います。国外に所在する事業者のサービスを利用する場合には、法令に従い必要な措置を講じます。</p>
+
+<h3>7. 安全管理措置</h3>
+<p>当社は、個人情報の漏えい、滅失または毀損の防止その他の安全管理のため、組織的、人的、物理的および技術的な措置を講じます。具体的な内容については、下記「情報セキュリティ基本方針」に定めます。</p>
+
+<h3>8. 開示、訂正、利用停止等のご請求</h3>
+<p>保有個人データについて、開示、内容の訂正、追加または削除、利用の停止、消去および第三者提供の停止のご請求に応じます。下記のお問い合わせ窓口までご連絡ください。ご本人であることを確認のうえ、法令の定めに従い対応します。</p>
+
+<h3>9. Cookie およびアクセス情報について</h3>
+<p>当社のウェブサイトでは、Cookie による個人の追跡やアクセス解析は行っていません。ただし、会社概要ページに掲載している地図は外部サービス（Google マップ）の提供によるものであり、当該ページの閲覧時に、お客様の通信に関する情報が同サービスの提供者へ送信される場合があります。</p>
+
+<h3>10. お問い合わせ窓口</h3>
+<p>個人情報の取扱いに関するご意見、ご質問、苦情の申出、開示等のご請求は、以下までご連絡ください。</p>
+<ul>
+  <li>株式会社SynapXis　個人情報お問い合わせ窓口</li>
+  <li>メール：<span class="mailto" data-u="info" data-d="synapxis.jp"></span></li>
+  <li>電話：050-1785-1024</li>
+</ul>
+
+<h3>11. 本方針の変更</h3>
+<p>当社は、法令の改正または事業内容の変更に応じ、本方針を見直すことがあります。変更後の内容は本ページに掲載した時点から適用されます。</p>
+
+
+<h2 id="security">情報セキュリティ基本方針</h2>
+
+<p class="lead">当社は、お客様からお預かりする情報が事業の根幹であることを認識し、その保護を経営上の最重要事項の一つと位置づけ、以下の方針に基づき情報セキュリティの維持および向上に努めます。</p>
+
+<h3>1. 適用範囲</h3>
+<p>本方針は、当社の全ての業務および全ての役員・従業員、ならびに当社が業務を委託する者に適用します。</p>
+
+<h3>2. 体制</h3>
+<p>代表取締役を情報セキュリティの最高責任者とし、情報資産の管理、事故発生時の対応および本方針の見直しについて責任を負います。</p>
+
+<h3>3. 法令等の遵守</h3>
+<p>情報セキュリティに関する法令、規制、契約上の義務およびお客様との合意事項を遵守します。</p>
+
+<h3>4. 情報資産の管理</h3>
+<p>取り扱う情報資産を把握し、その重要度に応じて取扱いの区分を定め、アクセスできる者の範囲を必要最小限に限定します。</p>
+
+<h3>5. 安全管理措置</h3>
+<ul>
+  <li><b>組織的措置</b>：情報資産の取扱状況を記録し、定期的に点検します。</li>
+  <li><b>人的措置</b>：業務に関与する者に対し、秘密保持義務を課します。</li>
+  <li><b>物理的措置</b>：業務に用いる機器および記録媒体について、盗難、紛失および第三者による閲覧を防止する措置を講じます。</li>
+  <li><b>技術的措置</b>：機器およびアカウントへのアクセス制御、通信および保存データの暗号化、不正プログラム対策、ならびにバックアップの取得を行います。</li>
+</ul>
+
+<h3>6. 委託先の管理</h3>
+<p>業務を委託する場合は、委託先の情報セキュリティ体制を事前に確認し、契約により必要な義務を課したうえで、適切に監督します。</p>
+
+<h3>7. 事故への対応</h3>
+<p>情報の漏えい等の事故またはそのおそれを認識した場合は、速やかに被害の拡大防止措置を講じるとともに、関係するお客様および監督官庁へ法令に従い報告し、原因の究明と再発の防止に努めます。</p>
+
+<h3>8. 継続的な改善</h3>
+<p>事業内容および技術動向の変化に応じ、本方針および具体的な措置を定期的に見直し、継続的に改善します。</p>
+
+<div class="meta">
+  <p>制定日：2026年8月　　株式会社SynapXis　代表取締役　山口 敬人</p>
+</div>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap fbar">
+    <span>株式会社SynapXis</span>
+    <span><a href="index.html">トップ</a>　<a href="founder.html">代表</a>　<a href="insights/">分析記事</a>　<a href="news.html">お知らせ</a>　<a href="contact.html">お問い合わせ</a></span>
+    <span>&copy; 2026 SynapXis Inc.</span>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.mailto').forEach(function(el){
+  var a = document.createElement('a');
+  var addr = el.dataset.u + String.fromCharCode(64) + el.dataset.d;
+  a.href = 'mai' + 'lto:' + addr;
+  a.textContent = addr;
+  el.appendChild(a);
+});
+</script>
+</body>
+</html>

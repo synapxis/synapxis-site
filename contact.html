@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>お問い合わせ｜株式会社SynapXis</title>
+<meta name="description" content="株式会社SynapXisへのお問い合わせ。分析のご相談、顧問契約、講演・執筆のご依頼を承っています。初回のご相談は無償です。">
+<link rel="canonical" href="https://synapxis.jp/contact.html">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light dark;
+  --navy:#0D2340;--navy-deep:#081A31;--brass:#B08D57;--brass-text:#8A6636;
+  --blue:#2EA6FF;--blue-tint:#D5EDFF;--paper:#F7F5F0;
+  --ink:#1C2430;--muted:#5E6B7A;--rule:rgba(13,35,64,.14);
+  --bg:#F7F5F0;--bg-alt:#EFECE4;--surface:#F7F5F0;--heading:#0D2340;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#0E1721;--bg-alt:#14202C;--surface:#14202C;
+    --heading:#DEE9F7;--ink:#E4EAF2;--muted:#A0AEBD;
+    --rule:rgba(213,237,255,.16);--brass-text:#D3AA6C;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background-color:var(--bg)}
+body{
+  background-color:var(--bg);color:var(--ink);
+  font-family:"Noto Sans JP",system-ui,sans-serif;
+  font-size:16px;line-height:1.95;-webkit-font-smoothing:antialiased;
+  font-feature-settings:"palt" 1;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 28px}
+
+header{background-color:var(--bg);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);position:sticky;top:0;z-index:50}
+.bar{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--heading)}
+.brand svg{width:26px;height:26px;display:block;flex:none}
+.brand b{font-family:"Noto Serif JP",serif;font-size:19px;font-weight:600;letter-spacing:.04em}
+.back{font-size:13.5px;color:var(--muted);text-decoration:none;border-bottom:1px solid transparent}
+.back:hover{color:var(--heading);border-bottom-color:var(--brass)}
+
+.head{background-color:var(--navy);color:var(--paper);padding:66px 0 58px}
+.label{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-text)}
+.head .label{color:var(--blue-tint);opacity:.75}
+h1{font-family:"Noto Serif JP",serif;font-weight:600;font-size:clamp(26px,4vw,36px);line-height:1.5;margin-top:16px}
+.head .role{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;color:rgba(247,245,240,.62);margin-top:14px}
+
+section{padding:64px 0}
+#history{background-color:var(--bg-alt)}
+h2{
+  font-family:"Noto Serif JP",serif;font-weight:600;font-size:clamp(20px,2.6vw,25px);
+  line-height:1.6;color:var(--heading);margin:12px 0 28px;
+}
+.sub{max-width:680px;color:var(--muted);font-size:15px;margin-bottom:36px}
+.biowrap{display:grid;gap:30px}
+@media(min-width:860px){.biowrap{grid-template-columns:260px 1fr;gap:44px;align-items:start}}
+.portrait{margin:0}
+.portrait img{width:100%;height:auto;display:block}
+.portrait figcaption{margin-top:8px;font-size:11px;color:var(--muted);letter-spacing:.04em;text-align:right}
+.bio p{font-size:15px;color:var(--muted);line-height:2.1;max-width:760px}
+.bio p+p{margin-top:18px}
+
+.career{margin-top:36px;border-top:1px solid var(--rule)}
+.career div{
+  display:grid;gap:4px;padding:16px 0;border-bottom:1px solid var(--rule);
+}
+@media(min-width:760px){.career div{grid-template-columns:78px 300px 1fr;gap:20px;align-items:baseline}}
+.career .yr{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--brass-text)}
+.career b{font-weight:500;color:var(--heading);font-size:15px}
+.career span{font-size:14px;color:var(--muted)}
+
+h3{
+  font-family:"Noto Serif JP",serif;font-size:17px;font-weight:600;color:var(--heading);
+  margin:40px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--rule);
+}
+h3:first-of-type{margin-top:0}
+.entries{list-style:none}
+.entries li{
+  display:grid;gap:2px;padding:14px 0;border-bottom:1px solid var(--rule);
+}
+@media(min-width:760px){.entries li{grid-template-columns:78px 260px 1fr;gap:20px;align-items:baseline}
+  .entries.two li{grid-template-columns:260px 1fr}}
+.entries .date{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--brass-text)}
+.entries .media{font-size:14px;color:var(--heading);font-weight:500}
+.entries .ttl{font-size:14px;color:var(--muted)}
+.entries .ttl a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--brass)}
+.entries .ttl a:hover{color:var(--heading)}
+.roles{list-style:none;border-top:1px solid var(--rule)}
+.roles li{display:grid;gap:2px;padding:16px 0;border-bottom:1px solid var(--rule)}
+@media(min-width:760px){.roles li{grid-template-columns:340px 1fr;gap:24px;align-items:baseline}}
+.roles .org{font-size:15px;font-weight:500;color:var(--heading)}
+.roles .pos{font-size:14px;color:var(--muted)}
+.roles .pos a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--brass)}
+.roles .pos a:hover{color:var(--heading)}
+.pending{
+  border:1px dashed var(--rule);background:var(--surface);
+  padding:20px 22px;font-size:14px;color:var(--muted);line-height:1.9;
+}
+
+.cta{background-color:var(--navy);color:var(--paper);padding:56px 0}
+.cta h2{color:var(--paper)}
+.cta p{color:rgba(247,245,240,.78);font-size:15px;max-width:600px;margin-bottom:26px}
+.btn{
+  display:inline-block;text-decoration:none;background:var(--blue);color:#06203A;
+  font-weight:700;font-size:15px;letter-spacing:.06em;padding:16px 34px;border:1px solid var(--blue);
+}
+.btn:hover{background:transparent;color:var(--blue-tint)}
+
+footer{background-color:var(--navy-deep);color:rgba(247,245,240,.5);font-size:12.5px;padding:26px 0}
+.fbar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+.fbar a{color:rgba(247,245,240,.66);text-decoration:none;border-bottom:1px solid rgba(176,141,87,.5)}
+a:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+@media print{
+  :root{--bg:#fff;--bg-alt:#fff;--surface:#fff;--heading:#0D2340;--ink:#1C2430;--muted:#3F4B58;--rule:rgba(13,35,64,.28);--brass-text:#7A5A2C}
+  header{position:static;border-bottom:1px solid var(--rule)}
+  #net{display:none}
+  section,.head,.cta{padding:28px 0;break-inside:avoid}
+  h2,h3{break-after:avoid}
+  .svc,.flow,.approach,.trio,.mv,.career,.entries{break-inside:avoid}
+  a{text-decoration:none}
+  footer{color:#333}
+}
+</style>
+<style>
+.formwrap{max-width:640px}
+.field{margin-bottom:26px}
+.field label{display:block;font-size:14px;font-weight:500;color:var(--heading);margin-bottom:8px}
+.req{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;color:var(--brass-text);margin-left:8px}
+.opt{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;color:var(--muted);margin-left:8px}
+.field input,.field select,.field textarea{
+  width:100%;padding:13px 14px;font-size:15px;font-family:inherit;line-height:1.7;
+  color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:0;
+}
+.field textarea{min-height:180px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--brass);outline-offset:1px}
+.hint{font-size:12.5px;color:var(--muted);margin-top:7px;line-height:1.8}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--muted);line-height:1.8}
+.consent input{width:auto;margin-top:5px;flex:none}
+.consent a{color:var(--heading);text-decoration:none;border-bottom:1px solid var(--brass)}
+.submit{
+  display:inline-block;background:var(--blue);color:#06203A;font-weight:700;font-size:15px;
+  letter-spacing:.06em;padding:16px 40px;border:1px solid var(--blue);cursor:pointer;
+  font-family:inherit;margin-top:8px;
+}
+.submit:hover{background:transparent;color:var(--heading)}
+.alt{margin-top:40px;padding-top:24px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--muted);line-height:1.9}
+.alt a{color:var(--heading);text-decoration:none;border-bottom:1px solid var(--brass)}
+.msg{margin-top:18px;font-size:14px;line-height:1.8;display:none}
+.msg.show{display:block}
+.msg.err{color:#B04A4A}
+</style>
+
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><g fill="#2EA6FF">
+        <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85"/>
+        <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(90 12 12)"/>
+        <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(180 12 12)"/>
+        <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(270 12 12)"/>
+      </g></svg>
+      <b>SynapXis</b>
+    </a>
+    <a class="back" href="index.html">トップへ戻る</a>
+  </div>
+</header>
+
+<div class="head">
+  <div class="wrap">
+    <p class="label">Contact</p>
+    <h1>お問い合わせ</h1>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <p class="sub">分析のご相談、顧問契約、講演・執筆のご依頼を承っています。初回のご相談は無償です。内容の概要をお知らせいただければ、3営業日以内にこちらからご連絡します。</p>
+
+    <div class="formwrap">
+      <form id="cf" action="https://formspree.io/f/mgawkalb" method="POST">
+
+        <div class="field">
+          <label for="company">会社名・団体名<span class="req">必須</span></label>
+          <input type="text" id="company" name="会社名" required autocomplete="organization">
+        </div>
+
+        <div class="field">
+          <label for="name">お名前<span class="req">必須</span></label>
+          <input type="text" id="name" name="お名前" required autocomplete="name">
+        </div>
+
+        <div class="field">
+          <label for="email">メールアドレス<span class="req">必須</span></label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+
+        <div class="field">
+          <label for="subject">ご用件<span class="req">必須</span></label>
+          <select id="subject" name="ご用件" required>
+            <option value="">選択してください</option>
+            <option>データ分析のご相談</option>
+            <option>顧問契約のご相談</option>
+            <option>講演・セミナーのご依頼</option>
+            <option>執筆・監修のご依頼</option>
+            <option>取材のご依頼</option>
+            <option>協業・データ連携のご相談</option>
+            <option>その他</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="body">ご相談内容<span class="req">必須</span></label>
+          <textarea id="body" name="ご相談内容" required></textarea>
+          <p class="hint">解決したい課題と、いま手元にあるデータの種類（顧客アンケート、POS、勤怠など）をお書き添えいただけると、初回のご相談がスムーズです。詳細が固まっていない段階でも構いません。</p>
+        </div>
+
+        <div class="field consent">
+          <input type="checkbox" id="agree" name="個人情報の取扱いに同意" required value="同意">
+          <label for="agree" style="font-weight:400;color:var(--muted);margin:0">
+            <a href="privacy.html">プライバシーポリシー</a>に同意のうえ送信します<span class="req">必須</span>
+          </label>
+        </div>
+
+        <input type="hidden" name="_subject" value="【synapxis.jp】お問い合わせ">
+        <button type="submit" class="submit">送信する</button>
+        <p class="msg" id="msg"></p>
+      </form>
+
+      <div class="alt">
+        フォームがご利用いただけない場合は、メールまたはお電話でも承ります。<br>
+        MAIL <span class="mailto" data-u="info" data-d="synapxis.jp"></span>　／　TEL 050-1785-1024
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fbar">
+    <span>株式会社SynapXis</span>
+    <span><a href="index.html">トップ</a>　<a href="founder.html">代表</a>　<a href="insights/">分析記事</a>　<a href="news.html">お知らせ</a>　<a href="privacy.html">プライバシーポリシー</a></span>
+    <span>&copy; 2026 SynapXis Inc.</span>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.mailto').forEach(function(el){
+  var a = document.createElement('a');
+  var addr = el.dataset.u + String.fromCharCode(64) + el.dataset.d;
+  a.href = 'mai' + 'lto:' + addr;
+  a.textContent = addr;
+  a.style.color = 'inherit';
+  a.style.borderBottom = '1px solid var(--brass)';
+  a.style.textDecoration = 'none';
+  el.appendChild(a);
+});
+
+(function(){
+  var form = document.getElementById('cf');
+  var msg  = document.getElementById('msg');
+
+  function show(text, isErr){
+    msg.textContent = text;
+    msg.className = 'msg show' + (isErr ? ' err' : '');
+  }
+
+  form.addEventListener('submit', function(e){
+    var endpoint = form.getAttribute('action');
+
+    // 送信先が未設定のあいだは、入力内容をメール本文に組み立てて送信画面を開く
+    if(!endpoint){
+      e.preventDefault();
+      var f = form.elements;
+      var lines = [
+        '会社名・団体名：' + f['会社名'].value,
+        'お名前：'       + f['お名前'].value,
+        'メールアドレス：'+ f['email'].value,
+        'ご用件：'       + f['ご用件'].value,
+        '',
+        'ご相談内容：',
+        f['ご相談内容'].value
+      ].join('\n');
+      var addr = 'info' + String.fromCharCode(64) + 'synapxis.jp';
+      var url = 'mai' + 'lto:' + addr
+              + '?subject=' + encodeURIComponent('【お問い合わせ】' + f['ご用件'].value)
+              + '&body='    + encodeURIComponent(lines);
+      window.location.href = url;
+      show('メールソフトが開きます。開かない場合は、下記のアドレス宛に直接お送りください。', false);
+      return;
+    }
+
+    // 送信先が設定されている場合は、ページ遷移せずに送信する
+    e.preventDefault();
+    fetch(endpoint, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res){
+      if(res.ok){
+        form.style.display = 'none';
+        show('送信しました。3営業日以内にご連絡します。', false);
+        msg.style.display = 'block';
+      } else {
+        show('送信できませんでした。お手数ですが、下記のメールアドレス宛にお送りください。', true);
+      }
+    }).catch(function(){
+      show('送信できませんでした。お手数ですが、下記のメールアドレス宛にお送りください。', true);
+    });
+  });
+})();
+</script>
+</body>
+</html>
