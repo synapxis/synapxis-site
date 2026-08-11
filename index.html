@@ -248,10 +248,14 @@ h2{
   display:grid;gap:6px;padding:22px 4px;border-bottom:1px solid var(--rule);
   text-decoration:none;color:inherit;
 }
-@media(min-width:820px){.posts a{grid-template-columns:100px 1fr;gap:8px 26px;align-items:baseline}
+@media(min-width:820px){.posts a{grid-template-columns:158px 1fr;gap:4px 28px;align-items:start}
+  .posts .pmeta{grid-row:1 / span 2;padding-top:5px}
   .posts .pdesc{grid-column:2}}
 .posts a:hover .ptitle{color:var(--brass-text)}
-.pdate{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--brass-text)}
+.pdate{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:500;color:var(--brass-text)}
+.pmeta{display:block;line-height:1.7}
+.ptag{display:block;font-style:normal;font-size:11.5px;letter-spacing:.02em;color:var(--muted);margin-top:3px}
+@media(max-width:819px){.pmeta{display:flex;gap:14px;align-items:baseline}.ptag{margin-top:0}}
 .ptitle{font-family:"Noto Serif JP",serif;font-size:17px;font-weight:600;color:var(--heading);line-height:1.6}
 .pdesc{font-size:13.5px;color:var(--muted);line-height:1.9}
 
@@ -570,19 +574,24 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offs
     <p class="sub">公開されているデータだけを使い、業界で言われていることを検証しています。使ったデータの出所と、どこまで言えてどこから先は言えないのかを、記事ごとに明記しています。</p>
     <ul class="posts">
       <li><a href="insights/2026-08-lodging-structure-2.html">
-        <span class="pdate">2026.08</span>
+        <span class="pmeta"><b class="pdate">2026.08</b><i class="ptag">都道府県別の宿泊者数 ②</i></span>
         <span class="ptitle">旅先として選ばれてきた県の優位が、薄れている</span>
         <span class="pdesc">人口と立地では説明できない県固有の引力を測ると、長野・静岡・京都・福島が位置を下げていた。</span>
       </a></li>
       <li><a href="insights/2026-08-lodging-structure-1.html">
-        <span class="pdate">2026.08</span>
+        <span class="pmeta"><b class="pdate">2026.08</b><i class="ptag">都道府県別の宿泊者数 ①</i></span>
         <span class="ptitle">インバウンドは5.4倍になったが、行き先の構造は変わっていない</span>
         <span class="pdesc">外国人宿泊は12年で5.4倍。だが、どの県に泊まるかを決めている構造は動いていない。</span>
       </a></li>
       <li><a href="insights/2026-08-price-passthrough-2.html">
-        <span class="pdate">2026.08</span>
+        <span class="pmeta"><b class="pdate">2026.08</b><i class="ptag">価格転嫁率 後編</i></span>
         <span class="ptitle">値上げの理由の優劣は、業種で入れ替わる</span>
         <span class="pdesc">労務費は原材料費より転嫁が進んでいない。だが31業種のうち九つでは順位が逆転している。</span>
+      </a></li>
+      <li><a href="insights/2026-08-price-passthrough-1.html">
+        <span class="pmeta"><b class="pdate">2026.08</b><i class="ptag">価格転嫁率 前編</i></span>
+        <span class="ptitle">転嫁は、業種の中で完結しない</span>
+        <span class="pdesc">発注側としての価格転嫁率と、受注側としての価格転嫁率は、31業種でおおむね連動していた。</span>
       </a></li>
     </ul>
     <p class="more"><a href="insights/">記事の一覧を見る</a></p>
