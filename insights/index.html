@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>公開データによる分析｜株式会社SynapXis</title>
+<meta name="description" content="株式会社SynapXisが公開データのみを使って行った分析記事の一覧。使用データの出所と、どこまで言えるかの範囲を記事ごとに明記しています。">
+<link rel="canonical" href="https://synapxis.jp/insights/">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light dark;
+  --navy:#0D2340;--navy-deep:#081A31;--brass:#B08D57;--brass-text:#8A6636;
+  --blue:#2EA6FF;--blue-tint:#D5EDFF;--paper:#F7F5F0;
+  --ink:#1C2430;--muted:#5E6B7A;--rule:rgba(13,35,64,.14);
+  --bg:#F7F5F0;--bg-alt:#EFECE4;--surface:#F7F5F0;--heading:#0D2340;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#0E1721;--bg-alt:#14202C;--surface:#14202C;
+    --heading:#DEE9F7;--ink:#E4EAF2;--muted:#A0AEBD;
+    --rule:rgba(213,237,255,.16);--brass-text:#D3AA6C;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background-color:var(--bg)}
+body{
+  background-color:var(--bg);color:var(--ink);
+  font-family:"Noto Sans JP",system-ui,sans-serif;
+  font-size:16px;line-height:1.95;-webkit-font-smoothing:antialiased;
+  font-feature-settings:"palt" 1;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 28px}
+
+header{background-color:var(--bg);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);position:sticky;top:0;z-index:50}
+.bar{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--heading)}
+.brand svg{width:26px;height:26px;display:block;flex:none}
+.brand b{font-family:"Noto Serif JP",serif;font-size:19px;font-weight:600;letter-spacing:.04em}
+.back{font-size:13.5px;color:var(--muted);text-decoration:none;border-bottom:1px solid transparent}
+.back:hover{color:var(--heading);border-bottom-color:var(--brass)}
+
+.head{background-color:var(--navy);color:var(--paper);padding:66px 0 58px}
+.label{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-text)}
+.head .label{color:var(--blue-tint);opacity:.75}
+h1{font-family:"Noto Serif JP",serif;font-weight:600;font-size:clamp(26px,4vw,36px);line-height:1.5;margin-top:16px}
+.head .role{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;color:rgba(247,245,240,.62);margin-top:14px}
+
+section{padding:64px 0}
+#history{background-color:var(--bg-alt)}
+h2{
+  font-family:"Noto Serif JP",serif;font-weight:600;font-size:clamp(20px,2.6vw,25px);
+  line-height:1.6;color:var(--heading);margin:12px 0 28px;
+}
+.sub{max-width:680px;color:var(--muted);font-size:15px;margin-bottom:36px}
+.bio p{font-size:15px;color:var(--muted);line-height:2.1;max-width:760px}
+.bio p+p{margin-top:18px}
+
+.career{margin-top:36px;border-top:1px solid var(--rule)}
+.career div{
+  display:grid;gap:4px;padding:16px 0;border-bottom:1px solid var(--rule);
+}
+@media(min-width:760px){.career div{grid-template-columns:280px 1fr;gap:24px;align-items:baseline}}
+.career b{font-weight:500;color:var(--heading);font-size:15px}
+.career span{font-size:14px;color:var(--muted)}
+
+h3{
+  font-family:"Noto Serif JP",serif;font-size:17px;font-weight:600;color:var(--heading);
+  margin:40px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--rule);
+}
+h3:first-of-type{margin-top:0}
+.entries{list-style:none}
+.entries li{
+  display:grid;gap:2px;padding:14px 0;border-bottom:1px solid var(--rule);
+}
+@media(min-width:760px){.entries li{grid-template-columns:110px 190px 1fr;gap:20px;align-items:baseline}}
+.entries .date{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--brass-text)}
+.entries .media{font-size:14px;color:var(--heading);font-weight:500}
+.entries .ttl{font-size:14px;color:var(--muted)}
+.entries .ttl a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--brass)}
+.entries .ttl a:hover{color:var(--heading)}
+.pending{
+  border:1px dashed var(--rule);background:var(--surface);
+  padding:20px 22px;font-size:14px;color:var(--muted);line-height:1.9;
+}
+
+.cta{background-color:var(--navy);color:var(--paper);padding:56px 0}
+.cta h2{color:var(--paper)}
+.cta p{color:rgba(247,245,240,.78);font-size:15px;max-width:600px;margin-bottom:26px}
+.btn{
+  display:inline-block;text-decoration:none;background:var(--blue);color:#06203A;
+  font-weight:700;font-size:15px;letter-spacing:.06em;padding:16px 34px;border:1px solid var(--blue);
+}
+.btn:hover{background:transparent;color:var(--blue-tint)}
+
+footer{background-color:var(--navy-deep);color:rgba(247,245,240,.5);font-size:12.5px;padding:26px 0}
+.fbar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+.fbar a{color:rgba(247,245,240,.66);text-decoration:none;border-bottom:1px solid rgba(176,141,87,.5)}
+a:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+@media print{
+  :root{--bg:#fff;--bg-alt:#fff;--surface:#fff;--heading:#0D2340;--ink:#1C2430;--muted:#3F4B58;--rule:rgba(13,35,64,.28);--brass-text:#7A5A2C}
+  header{position:static;border-bottom:1px solid var(--rule)}
+  #net{display:none}
+  section,.head,.cta{padding:28px 0;break-inside:avoid}
+  h2,h3{break-after:avoid}
+  .svc,.flow,.approach,.trio,.mv,.career,.entries{break-inside:avoid}
+  a{text-decoration:none}
+  footer{color:#333}
+}
+</style>
+<style>
+.posts{list-style:none;border-top:1px solid var(--rule)}
+.posts a{display:grid;gap:6px;padding:24px 4px;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit}
+@media(min-width:820px){.posts a{grid-template-columns:100px 1fr;gap:8px 26px;align-items:baseline}.posts .pdesc{grid-column:2}}
+.posts a:hover .ptitle{color:var(--brass-text)}
+.pdate{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--brass-text)}
+.ptitle{font-family:"Noto Serif JP",serif;font-size:18px;font-weight:600;color:var(--heading);line-height:1.6}
+.pdesc{font-size:13.5px;color:var(--muted);line-height:1.9}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="../index.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><g fill="#2EA6FF">
+        <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85"/>
+        <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(90 12 12)"/>
+        <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(180 12 12)"/>
+        <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(270 12 12)"/>
+      </g></svg>
+      <b>SynapXis</b>
+    </a>
+    <a class="back" href="../index.html">トップへ戻る</a>
+  </div>
+</header>
+
+<div class="head">
+  <div class="wrap">
+    <p class="label">Insights</p>
+    <h1>公開データによる分析</h1>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <p class="sub">公開されているデータだけを使い、業界で言われていることを検証しています。使ったデータの出所、分析の手法、そしてどこまで言えてどこから先は言えないのかを、記事ごとに明記しています。すべて無償で公開しています。</p>
+    <ul class="posts">
+      <li><a href="2026-08-lodging-structure-2.html">
+        <span class="pdate">2026.08</span>
+        <span class="ptitle">旅先として選ばれてきた県の優位が、薄れている</span>
+        <span class="pdesc">人口と立地では説明できない県固有の引力を測ると、長野・静岡・京都・福島が位置を下げていた。</span>
+      </a></li>
+      <li><a href="2026-08-lodging-structure-1.html">
+        <span class="pdate">2026.08</span>
+        <span class="ptitle">インバウンドは5.4倍になったが、行き先の構造は変わっていない</span>
+        <span class="pdesc">外国人宿泊は12年で5.4倍。だが、どの県に泊まるかを決めている構造は動いていない。</span>
+      </a></li>
+      <li><a href="2026-08-price-passthrough-2.html">
+        <span class="pdate">2026.08</span>
+        <span class="ptitle">値上げの理由の優劣は、業種で入れ替わる</span>
+        <span class="pdesc">労務費は原材料費より転嫁が進んでいない。だが31業種のうち九つでは順位が逆転している。</span>
+      </a></li>
+      <li><a href="2026-08-price-passthrough-1.html">
+        <span class="pdate">2026.08</span>
+        <span class="ptitle">転嫁は、業種の中で完結しない</span>
+        <span class="pdesc">発注側としての価格転嫁率と、受注側としての価格転嫁率は、31業種でおおむね連動していた。</span>
+      </a></li>
+    </ul>
+  </div>
+</section>
+
+<div class="cta">
+  <div class="wrap">
+    <h2>ご相談を承っています</h2>
+    <p>自社のデータで同じような検証をしたい、というご相談を承っています。初回のご相談は無償です。</p>
+    <a class="btn" href="../contact.html">お問い合わせへ</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap fbar">
+    <span>株式会社SynapXis</span>
+    <span><a href="../index.html">トップ</a>　<a href="../founder.html">代表</a>　<a href="../news.html">お知らせ</a>　<a href="../privacy.html">プライバシーポリシー</a></span>
+    <span>&copy; 2026 SynapXis Inc.</span>
+  </div>
+</footer>
+
+</body>
+</html>
