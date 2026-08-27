@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>稼働率が下がったのは、客が減ったからではない | SynapXis</title>
+<meta name="description" content="稼働率が下がった理由を恒等式で3つに分けると、延べ宿泊者数・1室あたり人数・客室数になる。都市と地方では、その中身が逆を向いている。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://synapxis.jp/insights/2026-08-lodging-structure-4.html">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="稼働率が下がったのは、客が減ったからではない">
+<meta property="og:description" content="稼働率が下がった理由を恒等式で3つに分けると、延べ宿泊者数・1室あたり人数・客室数になる。都市と地方では、その中身が逆を向いている。">
+<meta property="og:url" content="https://synapxis.jp/insights/2026-08-lodging-structure-4.html">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"稼働率が下がったのは、客が減ったからではない","description":"稼働率が下がった理由を恒等式で3つに分けると、延べ宿泊者数・1室あたり人数・客室数になる。都市と地方では、その中身が逆を向いている。","datePublished":"2026-08","author":{"@type":"Person","name":"山口敬人","url":"https://synapxis.jp/founder.html"},"publisher":{"@type":"Organization","name":"株式会社SynapXis","url":"https://synapxis.jp/"},"mainEntityOfPage":"https://synapxis.jp/insights/2026-08-lodging-structure-4.html","isAccessibleForFree":true}
+</script>
+<style>
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:'Hiragino Kaku Gothic ProN','Yu Gothic',YuGothic,'Noto Sans JP',sans-serif;
+  line-height:1.95;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:64px 24px 96px}
+.kicker{font-size:13px;letter-spacing:.14em;color:var(--blue);font-weight:700;margin:0 0 14px}
+h1{font-size:30px;line-height:1.45;margin:0 0 18px;color:var(--navy);letter-spacing:.01em}
+.meta{font-size:13px;color:var(--muted);margin:0 0 44px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+h2{font-size:19px;margin:44px 0 14px;color:var(--navy);
+  padding-left:13px;border-left:4px solid var(--blue);line-height:1.5}
+p{margin:0 0 22px;font-size:16.5px}
+b{font-weight:700;color:var(--navy)}
+figure{margin:38px -12px;padding:20px 12px;background:var(--surface);border-radius:10px}
+svg{width:100%;height:auto;display:block}
+.fg-t{font-size:20px;font-weight:700;fill:var(--navy)}
+.fg-s{font-size:13.5px;fill:var(--muted)}
+.fg-grid{stroke:var(--grid);stroke-width:1}
+.fg-axis{stroke:var(--navy);stroke-width:1.5}
+.fg-tick{font-size:12.5px;fill:var(--muted)}
+.fg-ax{font-size:14px;font-weight:700;fill:var(--navy)}
+.fg-note{font-size:13px;fill:var(--muted)}
+.fg-fn{font-size:11.5px;fill:var(--muted)}
+.fg-lab{font-size:12px;fill:var(--text)}
+.fg-lab-hi{font-size:12px;font-weight:700;fill:var(--accent)}
+.fg-grp{font-size:14px;font-weight:700;fill:var(--navy)}
+.fg-occ{font-size:12.5px;fill:var(--muted)}
+.fg-val{font-size:11.5px;fill:var(--muted)}
+.fg-pt-up{fill:var(--accent);stroke:var(--bg);stroke-width:1.2}
+.fg-pt-down{fill:var(--pale);stroke:var(--bg);stroke-width:1.2}
+.fg-fit{stroke:var(--blue);stroke-width:1.6;stroke-dasharray:6 4;stroke-opacity:.75}
+.fg-up{fill:var(--blue);fill-opacity:.85}
+.fg-down{fill:var(--accent);fill-opacity:.85}
+.fg-sum{fill:var(--navy);fill-opacity:.9}
+.fg-sumlab{font-size:12px;font-weight:700;fill:var(--navy)}
+.tail{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted);line-height:1.85}
+.tail h3{font-size:13px;letter-spacing:.1em;color:var(--navy);margin:0 0 10px;font-weight:700}
+.tail dl{margin:0 0 22px}
+.tail dt{font-weight:700;color:var(--text);margin-top:9px}
+.tail dd{margin:2px 0 0}
+@media(max-width:600px){
+  .wrap{padding:44px 18px 72px} h1{font-size:24px} p{font-size:16px}
+  figure{margin:32px -18px;border-radius:0}
+}
+
+/* ===== SynapXis サイト共通の配色・書体に統一 ===== */
+:root{
+  --bg:#F7F5F0; --surface:#EFECE4; --text:#1C2430; --muted:#5E6B7A; --line:rgba(13,35,64,.14);
+  --navy:#0D2340; --blue:#2EA6FF; --accent:#8A6636; --green:#3F7F63; --pale:#AEB9C6; --grid:rgba(13,35,64,.10);
+  --navy-bg:#0D2340; --navy-deep:#081A31; --paper:#F7F5F0; --brass:#B08D57; --blue-tint:#D5EDFF;
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0E1721; --surface:#14202C; --text:#E4EAF2; --muted:#A0AEBD; --line:rgba(213,237,255,.16);
+    --navy:#DEE9F7; --blue:#2EA6FF; --accent:#D3AA6C; --green:#6FBF98; --pale:#4A5B6E; --grid:rgba(213,237,255,.12);
+  }
+}
+body{font-family:"Noto Sans JP",system-ui,sans-serif;font-feature-settings:"palt" 1}
+h1,h2{font-family:"Noto Serif JP",serif;font-weight:600}
+.kicker{font-family:"IBM Plex Mono",monospace;font-weight:500;color:var(--accent);font-size:11px;letter-spacing:.22em}
+.tail h3{font-family:"IBM Plex Mono",monospace;letter-spacing:.18em}
+.serieslink{
+  margin:34px 0 0;padding:18px 20px;background:var(--surface);
+  border-left:3px solid var(--brass);font-size:14.5px;line-height:1.85
+}
+.serieslink a{color:var(--navy);border-bottom:1px solid var(--brass);text-decoration:none}
+header{position:sticky;top:0;z-index:50;background-color:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{max-width:720px;padding:0 24px}
+.bar{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--navy)}
+.brand svg{width:26px;height:26px;display:block;flex:none}
+.brand b{font-family:"Noto Serif JP",serif;font-size:19px;font-weight:600;letter-spacing:.04em}
+.back{font-size:13.5px;color:var(--muted);text-decoration:none;border-bottom:1px solid transparent}
+.back:hover{color:var(--navy);border-bottom-color:var(--brass)}
+.cta{background-color:var(--navy-bg);color:var(--paper);padding:56px 0}
+.cta .wrap{max-width:720px;padding:0 24px}
+.ctah{font-family:"Noto Serif JP",serif;font-size:22px;font-weight:600;color:var(--paper);margin:0 0 16px;padding:0;border:0}
+.cta p{color:rgba(247,245,240,.78);font-size:15px;max-width:620px;margin-bottom:26px}
+.btn{display:inline-block;text-decoration:none;background:var(--blue);color:#06203A;font-weight:700;
+  font-size:15px;letter-spacing:.06em;padding:16px 34px;border:1px solid var(--blue)}
+.btn:hover{background:transparent;color:var(--blue-tint)}
+footer{background-color:var(--navy-deep);color:rgba(247,245,240,.5);font-size:12.5px;padding:26px 0}
+footer .wrap{max-width:720px;padding:0 24px}
+.fbar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+.fbar a{color:rgba(247,245,240,.66);text-decoration:none;border-bottom:1px solid rgba(176,141,87,.5)}
+@media print{
+  :root{--bg:#fff;--surface:#fff;--text:#1C2430;--muted:#3F4B58;--line:rgba(13,35,64,.28);--navy:#0D2340}
+  header{position:static}
+  figure,.tail{break-inside:avoid}
+  h2{break-after:avoid}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="../index.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><g fill="#2EA6FF">
+        <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85"/>
+        <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(90 12 12)"/>
+        <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(180 12 12)"/>
+        <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(270 12 12)"/>
+      </g></svg>
+      <b>SynapXis</b>
+    </a>
+    <a class="back" href="index.html">記事一覧へ</a>
+  </div>
+</header>
+
+<div class="wrap">
+<p class="kicker">SYNAPXIS INSIGHTS &nbsp;/&nbsp; 06</p>
+<h1>稼働率が下がったのは、客が減ったからではない</h1>
+<p class="meta">2026年8月　|　都道府県別に宿泊を読む　④</p>
+
+<p>③で、全国の客室稼働率が72.0%から70.9%へ下がったこと、その下げ幅が客室を増やした県で特に大きいわけではないことを見た。では何が下げたのか。稼働率は割り算なので、中身を開ければ分けられる。分けてみると、延べ宿泊者数は10.6%増えていた。客が減ったから下がったのではない。</p>
+
+<h2>稼働率は、3つで説明しきれる</h2>
+
+<p>客室稼働率は、利用客室数を客室数×365日で割ったものである。そして利用客室数は、延べ宿泊者数を1室あたりの人数で割ったものにあたる。ツインを1人で使えば1室あたりの人数は1.0、2人で使えば2.0になる。</p>
+
+<p>この2本で閉じるので、稼働率が動いた理由は3つしかない。延べ宿泊者数が増えれば上がり、1室あたりの人数が増えれば下がり、客室数が増えれば下がる。3つの伸び率を足し引きすると、稼働率の変化にちょうど戻る。</p>
+
+<h2>全国では、客は減っていない</h2>
+
+<p>全国の延べ宿泊者数は10.6%増えた。日本人が-0.0%とほぼ横ばいで、外国人が52.3%増えている。</p>
+
+<p>客室数も10.1%増えた。宿泊者数の伸びとほぼ同じである。そして1室あたりの人数が1.59人から1.62人へ2.0%増えた。同じ人数がより少ない部屋に収まるので、使われた部屋の数は8.4%しか増えていない。</p>
+
+<p>稼働率への寄与に直すと、宿泊者数が10.0%押し上げ、1室あたり人数の増加が-2.0%、客室数の増加が-9.6%押し下げる。足すと-1.6%になり、稼働率の変化にちょうど一致する。押し上げた分を、押し下げた2つがほぼ食べきった形である。</p>
+
+<h2>都市と地方で、中身が逆を向いている</h2>
+
+<figure><svg viewBox="0 0 700 898" role="img" aria-label="稼働率を押し上げた要素と押し下げた要素の相殺" xmlns="http://www.w3.org/2000/svg">
+<text x="20" y="34" class="fg-t">押し上げた分と押し下げた分が、ほぼ相殺している</text>
+<text x="20" y="60" class="fg-s">客室稼働率の変化の内訳　2019年→2025年　従業者10人以上の施設</text>
+<text x="20" y="88" class="fg-note">延べ宿泊者数が増えると稼働率は上がり、1室あたり人数と客室数が増えると下がる。</text>
+<text x="20" y="108" class="fg-note">3つを順に積み上げると、稼働率の変化にちょうど戻る。棒は前の棒の終わりから始まる。</text>
+<text x="20" y="132" class="fg-note">都市は宿泊者数の大きな増加を、客室数の増加がほぼ食べている。</text>
+<text x="20" y="152" class="fg-note">地方は宿泊者数の減少を、客室数と1室あたり人数の減少が埋めている。</text>
+<text x="20" y="176" class="fg-note">棒の数字は稼働率への寄与で、その項目の増減率ではない。客室数が減れば稼働率は上がるので、プラスに出る。</text>
+<text x="20" y="214" class="fg-grp">全国</text>
+<text x="588" y="214" class="fg-occ" text-anchor="end">客室稼働率 72.0% → 70.9%</text>
+<rect x="268.0" y="222.0" width="160.0" height="14" class="fg-up"/>
+<text x="152" y="233.0" class="fg-lab" text-anchor="end">延べ宿泊者数</text>
+<text x="436.0" y="233.0" class="fg-val" text-anchor="start">+10.0</text>
+<rect x="396.0" y="243.0" width="32.0" height="14" class="fg-down"/>
+<text x="152" y="254.0" class="fg-lab" text-anchor="end">1室あたり人数 ※</text>
+<text x="388.0" y="254.0" class="fg-val" text-anchor="end">-2.0</text>
+<rect x="242.4" y="264.0" width="153.6" height="14" class="fg-down"/>
+<text x="152" y="275.0" class="fg-lab" text-anchor="end">客室数</text>
+<text x="234.4" y="275.0" class="fg-val" text-anchor="end">-9.6</text>
+<rect x="242.4" y="285.0" width="25.6" height="14" class="fg-sum"/>
+<text x="152" y="296.0" class="fg-sumlab" text-anchor="end">差し引き</text>
+<text x="234.4" y="296.0" class="fg-sumlab" text-anchor="end">-1.6</text>
+<line x1="164" y1="304.0" x2="588" y2="304.0" class="fg-grid"/>
+<text x="20" y="346" class="fg-grp">客室が増えた6都道府県</text>
+<text x="588" y="346" class="fg-occ" text-anchor="end">客室稼働率 78.7% → 77.1%</text>
+<rect x="268.0" y="354.0" width="299.2" height="14" class="fg-up"/>
+<text x="152" y="365.0" class="fg-lab" text-anchor="end">延べ宿泊者数</text>
+<text x="575.2" y="365.0" class="fg-val" text-anchor="start">+18.7</text>
+<rect x="480.8" y="375.0" width="86.4" height="14" class="fg-down"/>
+<text x="152" y="386.0" class="fg-lab" text-anchor="end">1室あたり人数 ※</text>
+<text x="472.8" y="386.0" class="fg-val" text-anchor="end">-5.4</text>
+<rect x="236.0" y="396.0" width="244.8" height="14" class="fg-down"/>
+<text x="152" y="407.0" class="fg-lab" text-anchor="end">客室数</text>
+<text x="228.0" y="407.0" class="fg-val" text-anchor="end">-15.3</text>
+<rect x="236.0" y="417.0" width="32.0" height="14" class="fg-sum"/>
+<text x="152" y="428.0" class="fg-sumlab" text-anchor="end">差し引き</text>
+<text x="228.0" y="428.0" class="fg-sumlab" text-anchor="end">-2.0</text>
+<line x1="164" y1="436.0" x2="588" y2="436.0" class="fg-grid"/>
+<text x="20" y="478" class="fg-grp">その他29県</text>
+<text x="588" y="478" class="fg-occ" text-anchor="end">客室稼働率 68.4% → 66.9%</text>
+<rect x="268.0" y="486.0" width="67.2" height="14" class="fg-up"/>
+<text x="152" y="497.0" class="fg-lab" text-anchor="end">延べ宿泊者数</text>
+<text x="343.2" y="497.0" class="fg-val" text-anchor="start">+4.2</text>
+<rect x="335.2" y="507.0" width="11.2" height="14" class="fg-up"/>
+<text x="152" y="518.0" class="fg-lab" text-anchor="end">1室あたり人数 ※</text>
+<text x="354.4" y="518.0" class="fg-val" text-anchor="start">+0.7</text>
+<rect x="232.8" y="528.0" width="113.6" height="14" class="fg-down"/>
+<text x="152" y="539.0" class="fg-lab" text-anchor="end">客室数</text>
+<text x="224.8" y="539.0" class="fg-val" text-anchor="end">-7.1</text>
+<rect x="234.4" y="549.0" width="33.6" height="14" class="fg-sum"/>
+<text x="152" y="560.0" class="fg-sumlab" text-anchor="end">差し引き</text>
+<text x="226.4" y="560.0" class="fg-sumlab" text-anchor="end">-2.1</text>
+<line x1="164" y1="568.0" x2="588" y2="568.0" class="fg-grid"/>
+<text x="20" y="610" class="fg-grp">人口が小さい12県</text>
+<text x="588" y="610" class="fg-occ" text-anchor="end">客室稼働率 63.6% → 63.3%</text>
+<rect x="200.8" y="618.0" width="67.2" height="14" class="fg-down"/>
+<text x="152" y="629.0" class="fg-lab" text-anchor="end">延べ宿泊者数</text>
+<text x="192.8" y="629.0" class="fg-val" text-anchor="end">-4.2</text>
+<rect x="200.8" y="639.0" width="33.6" height="14" class="fg-up"/>
+<text x="152" y="650.0" class="fg-lab" text-anchor="end">1室あたり人数 ※</text>
+<text x="242.4" y="650.0" class="fg-val" text-anchor="start">+2.1</text>
+<rect x="234.4" y="660.0" width="27.2" height="14" class="fg-up"/>
+<text x="152" y="671.0" class="fg-lab" text-anchor="end">客室数</text>
+<text x="269.6" y="671.0" class="fg-val" text-anchor="start">+1.7</text>
+<rect x="261.6" y="681.0" width="6.4" height="14" class="fg-sum"/>
+<text x="152" y="692.0" class="fg-sumlab" text-anchor="end">差し引き</text>
+<text x="253.6" y="692.0" class="fg-sumlab" text-anchor="end">-0.4</text>
+<line x1="164" y1="700.0" x2="588" y2="700.0" class="fg-grid"/>
+<line x1="268.0" y1="194" x2="268.0" y2="704.0" class="fg-axis"/>
+<text x="268.0" y="188" class="fg-tick" text-anchor="middle">0</text>
+<rect x="164" y="756" width="15" height="11" class="fg-up"/>
+<text x="185" y="766" class="fg-lab">押し上げ</text>
+<rect x="255" y="756" width="15" height="11" class="fg-down"/>
+<text x="276" y="766" class="fg-lab">押し下げ</text>
+<rect x="346" y="756" width="15" height="11" class="fg-sum"/>
+<text x="367" y="766" class="fg-lab">差し引き</text>
+<text x="20" y="798" class="fg-fn">※ 1室あたり人数が増えると、同じ宿泊者数でも使う部屋が減るため、稼働率は下がる。</text>
+<text x="20" y="817" class="fg-fn">　 この欄はその押し下げ分であって、1室あたり人数そのものの増減率ではない。</text>
+<text x="20" y="836" class="fg-fn">観光庁「宿泊旅行統計調査」年の確定値。従業者10人以上の施設。</text>
+<text x="20" y="855" class="fg-fn">寄与は対数で取っているため、3つの和が稼働率の変化にちょうど一致する。単位は%。</text>
+<text x="20" y="874" class="fg-fn">客室数の伸びは、営業許可ベースの4.4%とは一致しない。標本の入れ替わりが混ざる。</text>
+<text x="694" y="890" text-anchor="end" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;fill:var(--muted);opacity:.7">© 2026 SynapXis Inc.</text>
+</svg></figure>
+
+<p>同じ分け方を、客室が増えた6都道府県と、人口が小さい12県に当てる。この2つは重ならない。</p>
+
+<p>6都道府県は3つとも増えている。延べ宿泊者数が20.6%、1室あたり人数が5.6%、客室数が16.5%。稼働率への寄与に直すと、宿泊者数が18.7%押し上げ、1室あたり人数の増加が-5.4%、客室数の増加が-15.3%押し下げる。客が大きく増えた分を、部屋を増やした分がほぼ食べている。差し引きは-2.0%で、稼働率は78.7%から77.1%へ下がる。</p>
+
+<p>12県は3つとも減っている。延べ宿泊者数が-4.1%、1室あたり人数が-2.1%、客室数が-1.6%。寄与に直すと符号が入れ替わり、宿泊者数の減少が-4.2%押し下げる一方、1室あたり人数の減少が2.1%、客室数の減少が1.7%押し上げる。客が減ったぶん部屋を減らし、1部屋に入る人数も減ったからである。差し引きは-0.4%で、稼働率は63.6%から63.3%とほとんど動かない。</p>
+
+<p>全国の数字は、この向きの違う2つを合わせたものである。「稼働率が下がった」という一言で括ると、都市で起きていることと地方で起きていることが混ざる。</p>
+
+<h2>1室あたり人数は、外国人が増えた県で増えている</h2>
+
+<figure><svg viewBox="0 0 700 578" role="img" aria-label="外国人比率の変化と1室あたり人数の変化" xmlns="http://www.w3.org/2000/svg">
+<text x="20" y="34" class="fg-t">外国人比率が上がった県ほど、1室あたり人数も上がった</text>
+<text x="20" y="60" class="fg-s">横軸は外国人比率の変化、縦軸は1室あたり人数の変化　47都道府県　2019年→2025年</text>
+<text x="20" y="88" class="fg-note">相関は0.57。1室あたり人数が増えたのは18都道府県で、外国人比率が大きく上がった県に寄っている。</text>
+<text x="20" y="108" class="fg-note">ただし利用客室数は国籍別に分かれていないので、外国人の泊まり方そのものは測れない。</text>
+<text x="594" y="140" class="fg-ax" text-anchor="end">↑ 1室あたり人数の変化（%）</text>
+<line x1="136.2" y1="152" x2="136.2" y2="426" class="fg-axis"/>
+<text x="136.2" y="446" class="fg-tick" text-anchor="middle">+0pt</text>
+<line x1="326.9" y1="152" x2="326.9" y2="426" class="fg-grid"/>
+<text x="326.9" y="446" class="fg-tick" text-anchor="middle">+10pt</text>
+<line x1="517.7" y1="152" x2="517.7" y2="426" class="fg-grid"/>
+<text x="517.7" y="446" class="fg-tick" text-anchor="middle">+20pt</text>
+<line x1="98" y1="426.0" x2="594" y2="426.0" class="fg-grid"/>
+<text x="88" y="431.0" class="fg-tick" text-anchor="end">-10%</text>
+<line x1="98" y1="368.9" x2="594" y2="368.9" class="fg-grid"/>
+<text x="88" y="373.9" class="fg-tick" text-anchor="end">-5%</text>
+<line x1="98" y1="311.8" x2="594" y2="311.8" class="fg-axis"/>
+<text x="88" y="316.8" class="fg-tick" text-anchor="end">0%</text>
+<line x1="98" y1="254.8" x2="594" y2="254.8" class="fg-grid"/>
+<text x="88" y="259.8" class="fg-tick" text-anchor="end">+5%</text>
+<line x1="98" y1="197.7" x2="594" y2="197.7" class="fg-grid"/>
+<text x="88" y="202.7" class="fg-tick" text-anchor="end">+10%</text>
+<line x1="117.1" y1="344.0" x2="574.9" y2="206.8" class="fg-fit"/>
+<circle cx="116.3" cy="389.9" r="4.5" class="fg-pt-down"/>
+<circle cx="497.7" cy="269.2" r="5.5" class="fg-pt-up"/>
+<circle cx="100.1" cy="358.0" r="4.5" class="fg-pt-down"/>
+<circle cx="188.5" cy="354.4" r="4.5" class="fg-pt-down"/>
+<circle cx="227.4" cy="324.4" r="5.5" class="fg-pt-up"/>
+<circle cx="117.2" cy="293.9" r="4.5" class="fg-pt-down"/>
+<circle cx="234.0" cy="387.6" r="4.5" class="fg-pt-down"/>
+<circle cx="149.6" cy="279.5" r="4.5" class="fg-pt-down"/>
+<circle cx="181.2" cy="335.3" r="4.5" class="fg-pt-down"/>
+<circle cx="257.9" cy="244.7" r="5.5" class="fg-pt-up"/>
+<circle cx="92.9" cy="386.2" r="4.5" class="fg-pt-down"/>
+<circle cx="220.9" cy="324.3" r="4.5" class="fg-pt-down"/>
+<circle cx="80.5" cy="347.0" r="4.5" class="fg-pt-down"/>
+<circle cx="171.5" cy="305.3" r="4.5" class="fg-pt-down"/>
+<circle cx="166.7" cy="351.5" r="4.5" class="fg-pt-down"/>
+<circle cx="196.9" cy="359.6" r="4.5" class="fg-pt-down"/>
+<circle cx="138.5" cy="351.0" r="4.5" class="fg-pt-down"/>
+<circle cx="216.3" cy="355.6" r="4.5" class="fg-pt-down"/>
+<circle cx="201.0" cy="315.9" r="4.5" class="fg-pt-down"/>
+<circle cx="184.5" cy="346.7" r="4.5" class="fg-pt-down"/>
+<circle cx="150.3" cy="303.2" r="4.5" class="fg-pt-down"/>
+<circle cx="270.5" cy="277.3" r="4.5" class="fg-pt-down"/>
+<circle cx="232.2" cy="292.5" r="4.5" class="fg-pt-down"/>
+<circle cx="258.6" cy="255.7" r="4.5" class="fg-pt-down"/>
+<circle cx="178.3" cy="246.9" r="4.5" class="fg-pt-down"/>
+<circle cx="179.9" cy="314.0" r="4.5" class="fg-pt-down"/>
+<circle cx="460.1" cy="187.5" r="5.5" class="fg-pt-up"/>
+<circle cx="151.1" cy="364.3" r="4.5" class="fg-pt-down"/>
+<circle cx="175.3" cy="322.6" r="5.5" class="fg-pt-up"/>
+<circle cx="78.1" cy="354.2" r="4.5" class="fg-pt-down"/>
+<circle cx="323.6" cy="265.8" r="4.5" class="fg-pt-down"/>
+<circle cx="323.1" cy="400.5" r="4.5" class="fg-pt-down"/>
+<circle cx="231.7" cy="247.4" r="4.5" class="fg-pt-down"/>
+<circle cx="146.5" cy="327.5" r="4.5" class="fg-pt-down"/>
+<circle cx="422.5" cy="218.8" r="5.5" class="fg-pt-up"/>
+<circle cx="174.2" cy="308.9" r="4.5" class="fg-pt-down"/>
+<circle cx="152.5" cy="373.1" r="4.5" class="fg-pt-down"/>
+<circle cx="147.1" cy="353.5" r="4.5" class="fg-pt-down"/>
+<circle cx="142.7" cy="289.2" r="4.5" class="fg-pt-down"/>
+<circle cx="121.0" cy="316.4" r="4.5" class="fg-pt-down"/>
+<circle cx="202.2" cy="380.5" r="4.5" class="fg-pt-down"/>
+<circle cx="205.1" cy="313.9" r="4.5" class="fg-pt-down"/>
+<circle cx="117.3" cy="347.5" r="4.5" class="fg-pt-down"/>
+<circle cx="278.9" cy="313.8" r="4.5" class="fg-pt-down"/>
+<circle cx="166.3" cy="303.2" r="4.5" class="fg-pt-down"/>
+<circle cx="165.7" cy="300.0" r="4.5" class="fg-pt-down"/>
+<circle cx="99.5" cy="372.7" r="4.5" class="fg-pt-down"/>
+<text x="469.1" y="191.5" class="fg-lab-hi">東京</text>
+<text x="266.9" y="248.7" class="fg-lab-hi">大阪</text>
+<text x="506.7" y="273.2" class="fg-lab-hi">京都</text>
+<text x="175.3" y="307.2" class="fg-lab">高知</text>
+<text x="184.3" y="326.6" class="fg-lab-hi">沖縄</text>
+<text x="236.4" y="341.6" class="fg-lab-hi">北海道</text>
+<text x="147.5" y="356.6" class="fg-lab">山梨</text>
+<text x="161.5" y="377.1" class="fg-lab">秋田</text>
+<text x="346.0" y="472" class="fg-ax" text-anchor="middle">外国人比率の変化（ポイント）　→</text>
+<circle cx="608" cy="164" r="5.5" class="fg-pt-up"/>
+<text x="620" y="169" class="fg-lab-hi">上位6</text>
+<circle cx="608" cy="188" r="4.5" class="fg-pt-down"/>
+<text x="620" y="193" class="fg-lab">残る41県</text>
+<text x="20" y="488" class="fg-fn">観光庁「宿泊旅行統計調査」年の確定値。従業者10人以上の施設。</text>
+<text x="20" y="507" class="fg-fn">1室あたり人数＝延べ宿泊者数 ÷ 利用客室数。ツインを1人で使えば1.0に近づく。</text>
+<text x="20" y="526" class="fg-fn">直線は相関の向きを見るためのもので、県ごとの値を予測するものではない。</text>
+<text x="694" y="570" text-anchor="end" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;fill:var(--muted);opacity:.7">© 2026 SynapXis Inc.</text>
+</svg></figure>
+
+<p>1室あたりの人数が増えたのは47都道府県のうち18である。外国人比率の変化との相関は0.57で、外国人が大きく増えた県に寄っている。</p>
+
+<p>訪日客は、同行者がいる旅行が77.0%を占める。ひとりで来ているのは23.0%で、残りは夫婦や家族や友人と来ている。ひとりで1室を使う泊まり方が少ないので、外国人が増えれば1室に入る人数は上がる。図が示している連動は、そういうことと思われる。</p>
+
+<p>ただし、この統計は利用客室数を国籍別に持っていない。上がった分のどれだけが外国人によるものかまでは分けられない。同行者の数字も別の調査から取ったもので、足し引きできる相手ではない。</p>
+
+<h2>客室を増やしすぎた、という話ではない</h2>
+
+<p>県ごとに見ると、客室数の伸びと稼働率の変化の相関は-0.06、延べ宿泊者数の伸びとの相関は0.22である。どちらも、県という単位では効いているとは言えない。3つの要素が同じ県の中で打ち消しあう。</p>
+
+<p>効き方が見えるのは、群に分けたときである。都市は3つとも増え、地方は3つとも減る。この違いが、稼働率の動き方の違いになっている。</p>
+
+<h2>稼働率だけを見て、客が減ったとは判断できない</h2>
+
+<p>稼働率は経営の指標として広く使われる。だがこの指標は、1室に何人泊まったかを反映しない。同じ客数でも、2人で1室を使う客が増えれば使う部屋が減り、稼働率は下がる。全国で起きていたのはそれで、延べ宿泊者数は10.6%増えているのに稼働率は72.0%から70.9%へ下がった。</p>
+
+<p>訪日客は同行者がいる旅行が77.0%を占める。外国人が増えるほど、客が増えても稼働率は下がりやすくなる。訪日需要を取りにいっている施設ほど、稼働率という物差しでは実態より悪く見えると思われる。稼働率が下がったことを客離れや供給過剰の証拠として使うのは、危うい。</p>
+
+<p>そして中身は都市と地方で逆を向いている。都市は客の大きな増加を客室の増加が食べ、地方は客の減少を客室と1室あたり人数の減少が埋めた。差し引きはどちらも小幅な低下だが、起きていることは違う。「稼働率が下がった」という一言で括ると、この2つが混ざる。次の記事では、3つとも減っていた地方の側を、供給の中身から見る。</p>
+
+<p class="serieslink">③を読む　<a href="2026-08-lodging-structure-3.html">宿が増えたのは、ごく少数の県だけだった</a><br>⑤を読む　<a href="2026-08-lodging-structure-5.html">地方は、客が減り、宿が減り、簡易宿所だけが増えた</a></p>
+
+<div class="tail">
+<h3>用語</h3>
+<dl>
+<dt>客室稼働率</dt><dd>年間に使われた客室数を、客室数×365日で割った割合。1室に何人泊まったかは反映しない。</dd>
+<dt>利用客室数</dt><dd>年間に使われた客室の延べ数。1室が100日使われれば100室と数える。</dd>
+<dt>1室あたり人数</dt><dd>延べ宿泊者数を利用客室数で割った値。ツインを1人で使えば1.0、2人で使えば2.0に近づく。観光庁が公表している定員稼働率とは計算のしかたが違うが、読み取れることは近い。</dd>
+<dt>延べ宿泊者数</dt><dd>宿泊した人数を泊数ぶん数えたもの。1人が3泊すれば3人泊になる。</dd>
+<dt>従業者10人以上</dt><dd>宿泊旅行統計の集計区分のひとつ。全施設ベースは調査名簿の拡大が年ごとに混ざるため、年次比較にはこちらを使う。</dd>
+</dl>
+<h3>出典</h3>
+<p style="margin:0 0 22px">観光庁「宿泊旅行統計調査」年の確定値（2019年および2025年、従業者10人以上）、厚生労働省「衛生行政報告例」第4章第8表（2019年度および2024年度）、総務省「人口推計」（2024年10月1日現在）、観光庁「訪日外国人消費動向調査」の個票データ（2024年度および2025年度）をもとに作成。</p>
+<h3>この記事の範囲</h3>
+<p style="margin:0">分解は宿泊旅行統計の中だけで閉じている。ここで使った客室数の伸びは営業許可ベースと一致しないため、他の記事の供給量の数字とそのまま足し引きすることはできない。1室あたり人数は延べ宿泊者数と利用客室数から計算したもので、観光庁が公表している定員稼働率とは別の値である。訪日客の同行者は別の調査から取った人数ベースの構成比で、延べ泊数とは基準が違う。群分けの6都道府県は客室の増加数が多い順、12県は総務省の人口推計で下位12件を取ったもので、地方という区分に公的な定義があるわけではない。客室がなぜ増えたのか、誰が投資を決めたのかは、宿泊者数の集計には出てこない。</p>
+<h3>本記事の利用について</h3>
+<p style="margin:0 0 22px">出典として「株式会社SynapXis」と本記事のURLを明記いただければ、引用・紹介は自由に行っていただけます。図版も同じ条件で転載いただけます。社内資料への引用は連絡不要です。全文の転載、および有償のセミナーや商用出版物でのご利用については、事前に<a href="../contact.html" style="color:var(--navy);border-bottom:1px solid var(--brass);text-decoration:none">お問い合わせ</a>ください。引用いただいた際にお知らせいただけると、今後の題材選びの参考になります。</p>
+</div>
+
+<div class="cta">
+  <div class="wrap">
+    <h2 class="ctah">自社のデータで検証しませんか</h2>
+    <p>この記事はすべて公開データによる分析です。自社が持つデータを掛け合わせれば、より踏み込んだことが分かります。初回のご相談は無償です。</p>
+    <a class="btn" href="../contact.html">お問い合わせへ</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap fbar">
+    <span>株式会社SynapXis</span>
+    <span><a href="../index.html">トップ</a>　<a href="../founder.html">代表</a>　<a href="index.html">分析記事</a>　<a href="../news.html">お知らせ</a>　<a href="../privacy.html">プライバシーポリシー</a></span>
+    <span>&copy; 2026 SynapXis Inc.</span>
+  </div>
+</footer>
+
+</body>
+</html>
