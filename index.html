@@ -82,6 +82,7 @@
   --bg-alt:#EFECE4;
   --surface:#F7F5F0;
   --heading:#0D2340;
+  --fig-core:#0D2340;
 }
 @media(prefers-color-scheme:dark){
   :root{
@@ -93,6 +94,7 @@
     --muted:#A0AEBD;
     --rule:rgba(213,237,255,.16);
     --brass-text:#D3AA6C;
+    --fig-core:#1E3350;
   }
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -292,9 +294,42 @@ h2{
 .mapnote a{color:var(--heading);text-decoration:none;border-bottom:1px solid var(--brass)}
 .mapnote a:hover{color:var(--brass-text)}
 
+/* issue cards */
+.icards{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+@media(min-width:820px){.icards{grid-template-columns:repeat(3,1fr)}}
+.icards>div{background:var(--surface);padding:34px 30px 36px}
+.icards .ico{width:32px;height:32px;display:block;color:var(--blue)}
+.icards .num{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.22em;
+  color:var(--brass-text);display:block;margin:18px 0 6px;
+}
+.icards h3{
+  font-family:"Noto Serif JP",serif;font-size:17.5px;font-weight:600;
+  color:var(--heading);margin:0 0 13px;line-height:1.6;
+}
+.icards p{font-size:14.5px;color:var(--muted);line-height:2}
+
+/* method figure */
+#method{background-color:var(--bg-alt)}
+.fig{margin-top:8px}
+.fig svg{width:100%;height:auto;display:block;font-family:"Noto Sans JP",system-ui,sans-serif}
+.fig .sp{display:none}
+@media(max-width:700px){.fig .pc{display:none}.fig .sp{display:block;max-width:420px;margin:0 auto}}
+.figcap{
+  margin-top:26px;padding-left:16px;border-left:2px solid var(--rule);
+  font-size:13.5px;color:var(--muted);line-height:1.95;max-width:760px;
+}
+
+/* edge (method の補足) */
+.edge{margin-top:52px;padding-top:36px;border-top:1px solid var(--rule)}
+.edgelead{
+  font-family:"Noto Serif JP",serif;font-size:17px;font-weight:600;
+  color:var(--heading);line-height:1.7;margin-bottom:30px;
+}
+
 /* approach */
 .approach{display:grid;gap:34px}
-@media(min-width:820px){.approach{grid-template-columns:1fr 1fr}}
+@media(min-width:820px){.approach{grid-template-columns:repeat(3,1fr);gap:28px}}
 .card{
   background:var(--surface);border:1px solid var(--rule);
   border-left:3px solid var(--brass);padding:30px 30px 32px;
@@ -416,25 +451,25 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offs
     <p class="label">Our Name</p>
     <h2>社名に込めた意味</h2>
     <p class="sub">
-      SynapXis（シナプシス）は、神経細胞のつなぎ目を意味する Synapse と、それを読み解く Analysis を重ねた造語です。
+      神経細胞のつなぎ目を意味する Synapse と、それを読み解く Analysis を重ねた造語です。
       シナプスは、信号が飛び越えるその一点でスパークが起きる場所。
-      そこに X を置いたのは、人の発想とAIの力を掛け合わせて先へ進めるという意思と、異なるものが交わる「交点」の意を重ねたためです。
+      そこに X を置いたのは、人の発想とAIを掛け合わせて先へ進めるという意思と、「交点」の意を重ねたためです。
     </p>
     <div class="trio">
       <div>
         <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><g fill="#2EA6FF"><polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85"/><polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(90 12 12)"/><polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(180 12 12)"/><polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(270 12 12)"/></g></svg>
         <h3>データの交点</h3>
-        <p>多くの企業が、活用しきれないまま多様なデータを抱えています。それらを組み合わせ、意味のある価値に変えます。</p>
+        <p>活用しきれないまま抱えているデータを組み合わせ、意味のある価値に変えます。</p>
       </div>
       <div>
         <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><g fill="#2EA6FF"><polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85"/><polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(90 12 12)"/><polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(180 12 12)"/><polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(270 12 12)"/></g></svg>
         <h3>経験の交点</h3>
-        <p>商社、戦略コンサルティング、製造業、サービス業、投資と、業界をまたいで積んだ経験と人脈を、そのまま持ち込みます。</p>
+        <p>商社、戦略コンサルティング、製造業、サービス業、投資。業界をまたいで積んだ経験と人脈を持ち込みます。</p>
       </div>
       <div>
         <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><g fill="#2EA6FF"><polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85"/><polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(90 12 12)"/><polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(180 12 12)"/><polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(270 12 12)"/></g></svg>
         <h3>人とAIの交点</h3>
-        <p>人にしかできない着眼と発想に、AIの収集力と構築力を掛け合わせます。どちらか一方では届かない速度と精度を出します。</p>
+        <p>人にしかできない着眼に、AIの収集力と構築力を掛け合わせ、一方では届かない速度と精度を出します。</p>
       </div>
     </div>
   </div>
@@ -468,6 +503,125 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offs
   </div>
 </section>
 
+<section id="issues">
+  <div class="wrap">
+    <p class="label">Issues</p>
+    <h2>データは貯まっているのに、使われないまま残る</h2>
+    <p class="sub">分析に踏み出せない理由は、企業ごとにばらばらではありません。おおむね次の3つに行き着きます。</p>
+    <div class="icards">
+      <div>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 12.5 12 17.5l10-5"/><path d="M2 18 12 23l10-5"/>
+        </svg>
+        <span class="num">01</span>
+        <h3>データが分断されている</h3>
+        <p>POSは売上、勤怠は労務。ひとつのデータの中だけを掘っても、数字が動いた理由までは届きません。</p>
+      </div>
+      <div>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9" cy="7.5" r="4"/><path d="M2 21v-1.5a4.5 4.5 0 0 1 4.5-4.5h5a4.5 4.5 0 0 1 4.5 4.5V21"/>
+          <path d="M17.5 6.5 22.5 11.5M22.5 6.5 17.5 11.5"/>
+        </svg>
+        <span class="num">02</span>
+        <h3>分析を担う人がいない</h3>
+        <p>専任者を置く余力のある企業は多くありません。データは貯まる一方で、使われずに残ります。</p>
+      </div>
+      <div>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3.5" y="10.5" width="17" height="11" rx="2"/><path d="M7.5 10.5V7a4.5 4.5 0 0 1 9 0v3.5"/><path d="M12 14.5v3"/>
+        </svg>
+        <span class="num">03</span>
+        <h3>横断できる会社がいない</h3>
+        <p>自社サービスを持つ会社どうしは競合です。データを持ち寄る役回りが空いたままになっています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="method">
+  <div class="wrap">
+    <p class="label">Method</p>
+    <h2>いま貯まっているデータだけで、始められます</h2>
+    <p class="sub">新しく集めていただく必要はありません。すでにお持ちのデータに公知情報と他業種の分析の型を掛け合わせ、1社の中だけでは届かない範囲まで見えるようにします。</p>
+    <div class="fig">
+      <svg class="pc" viewBox="0 0 1000 340" role="img" aria-label="お預かりするデータと、当社が掛け合わせる公知情報を掛け合わせ、経営の打ち手を取り出す流れの図">
+        <rect x="0" y="30" width="430" height="150" fill="var(--surface)" stroke="var(--rule)"/>
+        <text x="26" y="58" font-size="12" letter-spacing="1.4" fill="var(--brass-text)">お預かりするデータ</text>
+        <text x="26" y="96"  font-size="15" fill="var(--heading)">POS・レジ</text>
+        <text x="26" y="128" font-size="15" fill="var(--heading)">予約・勤怠</text>
+        <text x="26" y="160" font-size="15" fill="var(--heading)">口コミ・VoC</text>
+
+        <g fill="var(--blue)" transform="translate(477.2,82.2) scale(1.9)">
+          <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85"/>
+          <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(90 12 12)"/>
+          <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(180 12 12)"/>
+          <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(270 12 12)"/>
+        </g>
+
+        <rect x="570" y="30" width="430" height="150" fill="var(--surface)" stroke="var(--rule)"/>
+        <text x="596" y="58" font-size="12" letter-spacing="1.4" fill="var(--brass-text)">当社が掛け合わせる情報</text>
+        <text x="596" y="96"  font-size="15" fill="var(--heading)">公的統計・人口・商圏</text>
+        <text x="596" y="128" font-size="15" fill="var(--heading)">気象・カレンダー</text>
+        <text x="596" y="160" font-size="15" fill="var(--heading)">他業種で積んだ分析の型</text>
+
+        <line x1="500" y1="186" x2="500" y2="232" stroke="var(--blue)" stroke-width="1.4" opacity=".6"/>
+        <path d="M494 226 L500 236 L506 226" fill="none" stroke="var(--blue)" stroke-width="1.4" opacity=".6"/>
+
+        <rect x="150" y="244" width="700" height="80" fill="var(--fig-core)"/>
+        <text x="500" y="272" font-size="11.5" letter-spacing="1.4" fill="#D5EDFF" text-anchor="middle">取り出せるもの</text>
+        <text x="500" y="302" font-size="14.5" fill="#F7F5F0" text-anchor="middle">何が業績を動かしているか　／　次に打つ一手の優先順位　／　自社の位置</text>
+      </svg>
+      <svg class="sp" viewBox="0 0 340 444" role="img" aria-label="お預かりするデータと、当社が掛け合わせる公知情報を掛け合わせ、経営の打ち手を取り出す流れの図">
+        <rect x="0" y="20" width="340" height="118" fill="var(--surface)" stroke="var(--rule)"/>
+        <text x="18" y="44"  font-size="11.5" letter-spacing="1.2" fill="var(--brass-text)">お預かりするデータ</text>
+        <text x="18" y="76"  font-size="12.5" fill="var(--heading)">POS・レジ</text>
+        <text x="18" y="102" font-size="12.5" fill="var(--heading)">予約・勤怠</text>
+        <text x="18" y="128" font-size="12.5" fill="var(--heading)">口コミ・VoC</text>
+
+        <g fill="var(--blue)" transform="translate(155,151) scale(1.25)">
+          <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85"/>
+          <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(90 12 12)"/>
+          <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(180 12 12)"/>
+          <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(270 12 12)"/>
+        </g>
+
+        <rect x="0" y="194" width="340" height="118" fill="var(--surface)" stroke="var(--rule)"/>
+        <text x="18" y="218" font-size="11.5" letter-spacing="1.2" fill="var(--brass-text)">当社が掛け合わせる情報</text>
+        <text x="18" y="250" font-size="12.5" fill="var(--heading)">公的統計・人口・商圏</text>
+        <text x="18" y="276" font-size="12.5" fill="var(--heading)">気象・カレンダー</text>
+        <text x="18" y="302" font-size="12.5" fill="var(--heading)">他業種で積んだ分析の型</text>
+
+        <line x1="170" y1="320" x2="170" y2="344" stroke="var(--blue)" stroke-width="1.2" opacity=".6"/>
+        <path d="M165 339 L170 347 L175 339" fill="none" stroke="var(--blue)" stroke-width="1.2" opacity=".6"/>
+
+        <rect x="0" y="352" width="340" height="84" fill="var(--fig-core)"/>
+        <text x="170" y="376" font-size="11.5" letter-spacing="1.2" fill="#D5EDFF" text-anchor="middle">取り出せるもの</text>
+        <text x="170" y="401" font-size="12.5" fill="#F7F5F0" text-anchor="middle">何が業績を動かしているか／次に打つ一手の優先順位</text>
+        <text x="170" y="423" font-size="12.5" fill="#F7F5F0" text-anchor="middle">自社の位置</text>
+      </svg>
+    </div>
+    <p class="figcap">掛け合わせる側の情報は当社が用意します。お預けいただくのは、すでに手元にあるデータだけです。</p>
+
+    <div class="edge">
+      <p class="edgelead">統計の計算そのものは、いまや誰でも実行できます。差が出るのは、その前後です。</p>
+      <div class="trio">
+        <div>
+          <h3>指標ごとの相場観</h3>
+          <p>その数字が業界の実感からどれだけ外れているか。</p>
+        </div>
+        <div>
+          <h3>誤りに気づく目</h3>
+          <p>もっともらしい間違いを見抜けるのは人間です。</p>
+        </div>
+        <div>
+          <h3>見せる順序の設計</h3>
+          <p>有意なだけでは、次の一手は決まりません。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="services">
   <div class="wrap">
     <p class="label">Services</p>
@@ -477,17 +631,17 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offs
       <div>
         <p class="label">01 — Analytics</p>
         <h3>データの統合と分析</h3>
-        <p>顧客の評価、勤怠、販売実績など、これまで別々に見ていたデータを結び直します。何が業績を動かしている要因なのかを、感覚ではなく数字で特定します。</p>
+        <p>別々に見ていたデータを結び直し、何が業績を動かしているかを数字で特定します。</p>
       </div>
       <div>
         <p class="label">02 — Advisory</p>
         <h3>経営コンサルティング・顧問</h3>
-        <p>分析で見えた事実を、戦略と現場の打ち手に落とします。単発の報告書で終わらせず、実行して数字が動くところまで伴走します。</p>
+        <p>見えた事実を打ち手に落とします。報告書で終わらせず、数字が動くところまで伴走します。</p>
       </div>
       <div>
         <p class="label">03 — Outreach</p>
         <h3>講演・執筆・監修</h3>
-        <p>業界団体やセミナー、専門誌へ、データ活用の実務と事例を発信します。講師派遣、連載寄稿、書籍・記事の監修を承ります。</p>
+        <p>業界団体やセミナー、専門誌へ実務を発信します。講師派遣、連載寄稿、監修を承ります。</p>
       </div>
     </div>
     <p class="usecase">
@@ -505,34 +659,31 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offs
       <li>
         <span class="step">STEP 1</span>
         <h3>お問い合わせ・初回相談</h3>
-        <p>解決したい課題と、いま手元にあるデータの種類をお聞かせください。オンラインで30〜60分。この段階での費用はいただきません。</p>
+        <p>課題と、手元にあるデータの種類をお聞かせください。オンラインで30〜60分、無償です。</p>
       </li>
       <li>
         <span class="step">STEP 2</span>
         <h3>データの確認と実現可否の判断</h3>
-        <p>サンプルデータを拝見し、何がどこまで分かるかを事前に見極めます。分からないことは分からないとお伝えします。</p>
+        <p>サンプルを拝見し、何がどこまで分かるかを見極めます。分からないことは分からないとお伝えします。</p>
       </li>
       <li>
         <span class="step">STEP 3</span>
         <h3>お見積り・契約</h3>
-        <p>作業範囲、期間、成果物、費用を書面でご提示します。秘密保持契約およびデータの取扱条件を締結したうえで着手します。</p>
+        <p>範囲・期間・成果物・費用を書面でご提示します。秘密保持契約を締結したうえで着手します。</p>
       </li>
       <li>
         <span class="step">STEP 4</span>
         <h3>分析・ご報告</h3>
-        <p>分析結果は、統計の用語ではなく意思決定に使える言葉でご報告します。報告会の実施と、その後の打ち手の設計まで含みます。</p>
+        <p>意思決定に使える言葉でご報告します。報告会と、その後の打ち手の設計まで含みます。</p>
       </li>
       <li>
         <span class="step">STEP 5</span>
         <h3>継続（顧問・定点観測）</h3>
-        <p>打ち手が効いたかを定期的に検証する形へ移行できます。データが積み上がるほど精度が上がるため、継続を前提とした設計を推奨しています。</p>
+        <p>打ち手が効いたかを定期的に検証する形へ移行できます。データが積み上がるほど精度が上がります。</p>
       </li>
     </ol>
     <p class="flownote">
-      費用は、作業の範囲と期間に応じた個別のお見積りです。初回のご相談で概算をお伝えしたうえで正式にご提示しますので、金額の目安を知りたいという段階でもお気軽にご連絡ください。
-    </p>
-    <p class="flownote">
-      協業・データ提携のご相談も承っています。ただし前職との契約上、対象となる業界・領域に制約があるため、内容によってはお受けできない場合があります。まずはお問い合わせください。
+      費用は範囲と期間に応じた個別のお見積りです。金額の目安を知りたいという段階でもご連絡ください。協業・データ提携のご相談も承っていますが、前職との契約上、内容によってはお受けできない場合があります。
     </p>
   </div>
 </section>
@@ -543,22 +694,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offs
     <h2>私たちの考え方</h2>
     <div class="approach">
       <div class="card">
-        <h3>データは、掛け合わせたときに意味を持つ</h3>
-        <p>1つのデータだけを深く掘っても、分かることには限りがあります。性質の異なるデータを組み合わせたときに初めて、これまで見えなかった因果が浮かび上がります。SynapXisは、その組み合わせ方そのものを設計します。</p>
-      </div>
-      <div class="card">
         <h3>借りるのではなく、貯まる仕組みをつくる</h3>
-        <p>案件ごとにデータを借りて分析する形は、その場限りで終わります。たとえ匿名化していても、次に別の切り口で使おうとすれば改めて許諾を取り直すことになり、現実には続きません。SynapXisは、データが継続的に蓄積されていく座組みそのものを設計し、その運用をプロデュースします。多様なデータが一箇所に積み上がっていること自体が、他社には真似のできない資産になります。</p>
+        <p>案件ごとに借りる形は、その場限りで終わります。データが積み上がっていく座組みそのものを設計し、運用までプロデュースします。</p>
       </div>
       <div class="card">
         <h3>業種を限定しない</h3>
-        <p>手法は業種に依存しません。多店舗のサービス業で磨いた分析の型は、営業組織の評価や人材の定着といった、店舗を持たない事業にもそのまま適用できます。</p>
+        <p>多店舗サービス業で磨いた分析の型は、営業組織の評価や人材の定着にもそのまま使えます。</p>
       </div>
       <div class="card">
         <h3>経営の言葉で返す</h3>
-        <p>統計の用語をそのままお渡しすることはしません。どの打ち手が、どれだけ数字を動かすのか。意思決定する人がそのまま使える形に翻訳してお返しします。</p>
+        <p>統計の用語のままお渡しすることはしません。どの打ち手がどれだけ数字を動かすのかを、意思決定に使える形に翻訳します。</p>
       </div>
     </div>
+
     <p class="usecase">
       お預かりするデータの取扱いについては、<a href="privacy.html#security">情報セキュリティ基本方針</a>および<a href="privacy.html">プライバシーポリシー</a>に定めています。個人を特定する必要のない分析では、個人を識別できない状態に加工されたデータでの受領を原則としています。
     </p>
@@ -577,7 +725,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offs
       <div>
         <p>双日株式会社にて財務・経営企画に従事したのち、アクセンチュア株式会社で戦略コンサルティングに携わる。株式会社ミスミグループ本社で事業部門の責任者、株式会社アコーディア・ゴルフで執行役員を務めた後、PEファンドである株式会社刈田・アンド・カンパニーにて投資業務を経験。</p>
         <p>その後、投資先である株式会社ROI（現・株式会社ファンくる）の代表取締役として経営再建にあたり、ファンドMBOという形で事業成長までを自ら執行した。多店舗サービス業の顧客評価データを扱う実務のなかで、複数のデータを組み合わせて業績要因を特定する分析手法を確立した。</p>
-        <p>2026年8月、株式会社SynapXisを設立。あわせて株式会社ファンくる特別顧問を務める。日本飲食団体連合会 デジタル部会に所属し、業界のデータ活用に関する議論に参画している。</p>
+        <p>2026年8月、株式会社SynapXisを設立。あわせて株式会社ファンくる特別顧問を務める。日本飲食団体連合会 デジタル部会 VoR分科会の分科会長として、業界のデータ活用に関する議論に参画している。</p>
         <p class="more"><a href="founder.html">詳しい経歴と登壇・寄稿の実績を見る</a></p>
       </div>
     </div>
