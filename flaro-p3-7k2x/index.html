@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>仮説提出フォーム</title>
+<style>
+  :root{
+    --dark:#16191F; --acc:#006EB9; --txt:#1E1F24; --sub:#5C636E; --line:#DDE3EB;
+    --card:#F3F7FB; --card2:#E9F2FA; --warm:#FFF6E8; --warmb:#F0C987; --bg:#FFFFFF; --err:#B3261E;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--txt);
+    font-family:"Meiryo UI","Meiryo","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;font-size:16px;line-height:1.6}
+  header{background:var(--dark);color:#fff;padding:28px 20px}
+  header .wrap{max-width:860px;margin:0 auto}
+  header .kicker{color:var(--acc);font-size:12px;letter-spacing:.2em;font-weight:700}
+  header h1{margin:6px 0 4px;font-size:22px}
+  header p{margin:0;color:#9AA2AE;font-size:14px}
+  main{max-width:860px;margin:0 auto;padding:20px 16px 60px}
+  .rule{background:var(--warm);border:1px solid var(--warmb);padding:12px 16px;border-radius:4px;font-size:14px;margin:0 0 20px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:16px;margin:0 0 14px}
+  .step.hi{background:var(--card2);border-color:var(--acc)}
+  .step .num{color:var(--acc);font-weight:700;font-size:13px}
+  .step h2{margin:2px 0 8px;font-size:18px}
+  .hint{color:var(--sub);font-size:13px;margin:0 0 8px}
+  .hint b{color:var(--txt);font-weight:700}
+  label{display:block;font-weight:700;font-size:14px;margin:10px 0 4px}
+  label .req{color:var(--err);font-size:12px;margin-left:6px}
+  input[type=text],textarea,select{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:4px;background:#fff;color:var(--txt)}
+  textarea{min-height:88px;resize:vertical}
+  input:focus,textarea:focus,select:focus{outline:2px solid var(--acc);outline-offset:0;border-color:var(--acc)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media (max-width:600px){.row{grid-template-columns:1fr}}
+  .choices{display:flex;flex-wrap:wrap;gap:8px}
+  .choices label{display:flex;align-items:flex-start;gap:8px;font-weight:400;background:#fff;border:1px solid var(--line);border-radius:4px;padding:8px 10px;margin:0;cursor:pointer;flex:1 1 240px}
+  .choices input{margin-top:4px}
+  .choices small{display:block;color:var(--sub);font-size:12px}
+  .actions{display:flex;align-items:center;gap:14px;margin-top:20px;flex-wrap:wrap}
+  button{font:inherit;font-weight:700;background:var(--acc);color:#fff;border:0;border-radius:4px;padding:12px 28px;cursor:pointer}
+  button[disabled]{opacity:.5;cursor:default}
+  .msg{font-size:14px;color:var(--sub)}
+  .msg.err{color:var(--err)}
+  .done{background:var(--card2);border:1px solid var(--acc);border-radius:4px;padding:24px;text-align:center}
+  .done h2{margin:0 0 6px;color:var(--acc)}
+  .err-field{border-color:var(--err)!important}
+  footer{color:var(--sub);font-size:12px;text-align:center;padding:0 16px 30px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="kicker">STUDY SESSION　第三部　実践編</div>
+  <h1>仮説提出フォーム</h1>
+  <p>課題 → 仮説 → 材料 → 効果試算 → 相手と値付け。資料の記入シートと同じ5ステップです。</p>
+</div></header>
+
+<main>
+  <div class="rule">
+    FLAROのデータ（外部連携で入手するデータを含む）と公知情報を掛け合わせて、新しい仮説を1本提出してください。
+    分からない数字は「仮に○○とする」と置き、置いたことを最後の欄に書いてください。ワーク中はAI・検索を使いません。<b>※は必須</b>です。
+  </div>
+
+  <form id="f" novalidate>
+    <div class="step">
+      <div class="row">
+        <div><label for="name">氏名<span class="req">※必須</span></label><input type="text" id="name" name="name" autocomplete="name"></div>
+        <div><label for="title">仮説のタイトル<span class="req">※必須</span></label><input type="text" id="title" name="title" placeholder="例：平日の人時を週末並みにする"></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num">01</div><h2>課題</h2>
+      <p class="hint">誰が、いつ、何を決めるときに、何に困っているか。<b>一文で</b>。持ち主が複数なら一人ずつ書いてください。<br>例：チェーン本部のSVが、月末に翌月のシフト枠を各店に配るとき、どの曜日に人を厚くするかの根拠がない。</p>
+      <label for="q1">課題の持ち主と、困っている場面<span class="req">※必須</span></label>
+      <textarea id="q1" name="q1_issue"></textarea>
+    </div>
+
+    <div class="step">
+      <div class="num">02</div><h2>仮説</h2>
+      <p class="hint">データから何が新しく言えるか。事象／理由／兆しのどれか。持ち主が肌感で知っていることを数字で裏付ける「確認型」も可。ただし効果は半分以下に割り引きます。</p>
+      <label for="q2">仮説<span class="req">※必須</span></label>
+      <textarea id="q2" name="q2_hypothesis"></textarea>
+    </div>
+
+    <div class="step">
+      <div class="num">03</div><h2>材料</h2>
+      <p class="hint">何と何を、どの粒度で、何をキーに結ぶか。比べる相手は自店内か業態横断か（横断なら名寄せの要否）。データ名だけでは満点になりません。<br>例：POSのアカウント単位の金額・メニュー・数量 × 同一アカウントの料理評点。業態横断で比べるため料理ジャンルへ名寄せ。</p>
+      <label for="q3">材料（結び方・比べる相手・気を付ける点）</label>
+      <textarea id="q3" name="q3_material"></textarea>
+    </div>
+
+    <div class="step">
+      <div class="num">04</div><h2>効果試算</h2>
+      <p class="hint">価値の種類を1つ選び、年間期待効果を式で書きます。式：動く金額 × 動く割合 × 対象の数 × 年間の回数。仮置きした項には※を付けてください。</p>
+      <label>価値の種類</label>
+      <div class="choices">
+        <label><input type="radio" name="q4_type" value="売上増"><span>売上増<small>直接・増やす</small></span></label>
+        <label><input type="radio" name="q4_type" value="コスト減"><span>コスト減<small>直接・減らす。時間・工数もここ</small></span></label>
+        <label><input type="radio" name="q4_type" value="リスク"><span>リスク<small>間接・減らす。上級：起きる確率×起きたときの損失</small></span></label>
+        <label><input type="radio" name="q4_type" value="チャンス"><span>チャンス<small>間接・増やす。上級：実現する確率×そのときの価値</small></span></label>
+      </div>
+      <label for="q4f">年間期待効果：式と仮置きの数字<span class="req">※必須</span></label>
+      <textarea id="q4f" name="q4_formula" placeholder="例：平日の過剰人時×時間単価 × 100%（※理論上限） × 11店 × 年4回 ≒ 3,000万円"></textarea>
+      <label for="q4a">年間期待効果の金額（円／年、数字のみ）<span class="req">※必須</span></label>
+      <input type="text" id="q4a" name="q4_amount" inputmode="numeric" placeholder="例：30000000">
+    </div>
+
+    <div class="step hi">
+      <div class="num">05</div><h2>相手と値付け</h2>
+      <p class="hint">財布の持ち主がどれだけ欲しがるか。払う人は課題の持ち主と別のことがあります。値段は「誰の財布から、年いくら × 何社」で。</p>
+      <label>興味の強さ</label>
+      <div class="choices">
+        <label><input type="radio" name="q5_interest" value="知りたい"><span>知りたい<small>面白い。判断は変わらない</small></span></label>
+        <label><input type="radio" name="q5_interest" value="判断に使う"><span>判断に使う<small>数字があれば決め方が変わる</small></span></label>
+        <label><input type="radio" name="q5_interest" value="ないと困る"><span>ないと困る<small>数字なしでは決められない</small></span></label>
+      </div>
+      <label for="q5p">値付け：誰の財布から、年いくら × 何社</label>
+      <input type="text" id="q5p" name="q5_price" placeholder="例：本部のシステム費から、1店あたり年27万円 × 50社×10店">
+    </div>
+
+    <div class="step">
+      <label for="asm">仮置きした数字（列挙）</label>
+      <input type="text" id="asm" name="assumptions" placeholder="例：効果の1割、50社、10店">
+    </div>
+
+    <div class="actions">
+      <button type="submit" id="btn">提出する</button>
+      <span class="msg" id="msg">提出は1人1回です。送信後の修正はできません。</span>
+    </div>
+  </form>
+
+  <div class="done" id="done" hidden>
+    <h2>提出を受け付けました</h2>
+    <p>選ばれた3本は、本人が2分で発表します。発表の順は 課題 → 仮説 → 材料 → 効果 → 値付け です。</p>
+  </div>
+</main>
+<footer>株式会社SynapXis　｜　FLARO 社員向け勉強会 第三部 実践編</footer>
+
+<script>
+  // ---- 設定：Apps Script のウェブアプリURLと合言葉（Code.gs と同じ値）
+  var ENDPOINT = "https://script.google.com/macros/s/AKfycbwDljloRtCur17AlpbPl-1x2N2VJSr8vHxtPgU24ksPcGDpLgj4sQTrlEhxYUMd11Bc/exec";
+  var SECRET   = "flaro-part3-2026";
+
+  var form = document.getElementById("f"), btn = document.getElementById("btn"), msg = document.getElementById("msg");
+  var DRAFT_KEY = "flaro_part3_draft";
+
+  // 下書きの保存（この端末のブラウザ内だけ。送信とは無関係）
+  function saveDraft(){ try{ localStorage.setItem(DRAFT_KEY, JSON.stringify(collect())); }catch(e){} }
+  function loadDraft(){
+    try{
+      var d = JSON.parse(localStorage.getItem(DRAFT_KEY) || "null"); if(!d) return;
+      Object.keys(d).forEach(function(k){
+        var els = form.querySelectorAll('[name="'+k+'"]');
+        els.forEach(function(el){ if(el.type==="radio"){ el.checked = (el.value===d[k]); } else { el.value = d[k]||""; } });
+      });
+    }catch(e){}
+  }
+  function collect(){
+    var o = {}; new FormData(form).forEach(function(v,k){ o[k]=v; });
+    return o;
+  }
+  form.addEventListener("input", saveDraft);
+  loadDraft();
+
+  function mark(id, bad){ var el=document.getElementById(id); if(el) el.classList.toggle("err-field", bad); }
+
+  form.addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var d = collect();
+    var req = [["name","氏名"],["title","仮説のタイトル"],["q1_issue","01 課題"],["q2_hypothesis","02 仮説"],["q4_formula","04 式"],["q4_amount","04 金額"]];
+    var ids = {name:"name",title:"title",q1_issue:"q1",q2_hypothesis:"q2",q4_formula:"q4f",q4_amount:"q4a"};
+    var missing = [];
+    req.forEach(function(r){ var bad = !String(d[r[0]]||"").trim(); mark(ids[r[0]], bad); if(bad) missing.push(r[1]); });
+    var amt = String(d.q4_amount||"").replace(/[,，\s円]/g,"");
+    if(!/^\d+$/.test(amt)){ mark("q4a", true); if(missing.indexOf("04 金額")<0) missing.push("04 金額は半角数字のみ"); }
+    if(missing.length){ msg.className="msg err"; msg.textContent="未入力または形式の誤り："+missing.join("、"); return; }
+    d.q4_amount = amt; d.secret = SECRET;
+
+    btn.disabled = true; msg.className="msg"; msg.textContent="送信中…";
+    fetch(ENDPOINT, { method:"POST", body: JSON.stringify(d) })
+      .then(function(r){ return r.json(); })
+      .then(function(j){
+        if(j && j.ok){
+          try{ localStorage.removeItem(DRAFT_KEY); }catch(e){}
+          form.hidden = true; document.getElementById("done").hidden = false; window.scrollTo(0,0);
+        } else {
+          var reason = (j && j.reason) || "";
+          var text = reason==="closed" ? "受付時間外です。講師に声をかけてください。" :
+                     reason==="forbidden" ? "送信先の設定が合っていません。講師に声をかけてください。" :
+                     "送信に失敗しました。もう一度「提出する」を押してください。";
+          msg.className="msg err"; msg.textContent=text; btn.disabled=false;
+        }
+      })
+      .catch(function(){
+        msg.className="msg err"; msg.textContent="通信に失敗しました。電波を確認して、もう一度「提出する」を押してください（入力内容はこの端末に残っています）。"; btn.disabled=false;
+      });
+  });
+</script>
+</body>
+</html>
