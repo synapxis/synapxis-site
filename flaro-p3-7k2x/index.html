@@ -45,7 +45,24 @@
   .done{background:var(--card2);border:1px solid var(--acc);border-radius:4px;padding:24px;text-align:center}
   .done h2{margin:0 0 6px;color:var(--acc)}
   .err-field{border-color:var(--err)!important}
+  .calc{margin-top:10px;padding:10px 12px;background:#fff;border:1px dashed var(--acc);border-radius:4px;font-size:14px}
+  .calc b{color:var(--acc);font-size:18px}
   footer{color:var(--sub);font-size:12px;text-align:center;padding:0 16px 30px}
+  .tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 14px}
+  .tools button,.tools label.btn{font:inherit;font-size:13px;font-weight:700;background:#fff;color:var(--acc);border:1px solid var(--acc);border-radius:4px;padding:8px 12px;cursor:pointer}
+  .tools .auto{font-size:12px;color:var(--sub);margin-left:auto}
+  .tools input[type=file]{display:none}
+  #summary{display:none}
+  @media print{
+    header,main > .rule,main > form,main > .done,.tools,footer{display:none!important}
+    #summary{display:block}
+    body{font-size:12pt}
+  }
+  #summary h1{font-size:18pt;margin:0 0 4pt}
+  #summary .meta{color:#555;font-size:10pt;margin:0 0 12pt}
+  #summary table{width:100%;border-collapse:collapse}
+  #summary th,#summary td{border:1px solid #bbb;padding:6pt 8pt;vertical-align:top;text-align:left;font-size:11pt}
+  #summary th{width:28%;background:#f3f7fb}
 </style>
 </head>
 <body>
@@ -58,9 +75,16 @@
 <main>
   <div class="rule">
     FLAROのデータ（外部連携で入手するデータを含む）と公知情報を掛け合わせて、新しい仮説を1本提出してください。
-    分からない数字は「仮に○○とする」と置き、置いたことを最後の欄に書いてください。ワーク中はAI・検索を使いません。<b>※は必須</b>です。
+    分からない数字は「仮に○○とする」と置き、置いたことを最後の欄に書いてください。ワーク中はAI・検索を使いません。金額は<b>百万円単位</b>、<b>※は必須</b>です。
   </div>
 
+  <div class="tools">
+    <button type="button" id="copy">テキストをコピー</button>
+    <button type="button" id="pdf">PDFで保存（印刷）</button>
+    <button type="button" id="dl">ファイルに保存</button>
+    <label class="btn" for="ul">ファイルから読み込む</label><input type="file" id="ul" accept=".json,application/json">
+    <span class="auto" id="auto">入力はこの端末に自動保存されます</span>
+  </div>
   <form id="f" novalidate>
     <div class="step">
       <div class="row">
@@ -92,7 +116,7 @@
 
     <div class="step">
       <div class="num">04</div><h2>効果試算</h2>
-      <p class="hint">価値の種類を1つ選び、年間期待効果を式で書きます。式：動く金額 × 動く割合 × 対象の数 × 年間の回数。仮置きした項には※を付けてください。</p>
+      <p class="hint"><b>クライアント側に生まれる金銭メリット</b>です。価値の種類と効果の単位を選び、1単位あたりの年間期待効果を<b>利益</b>で書きます（売上増は利益率を掛ける）。式：動く利益 × 動く割合 × 対象の数 × 年間の回数。仮置きした項には※を付けてください。<br><b>単位：飲食店の場合は店舗、それ以外（メーカー等）は会社</b>。</p>
       <label>価値の種類</label>
       <div class="choices">
         <label><input type="radio" name="q4_type" value="売上増"><span>売上増<small>直接・増やす</small></span></label>
@@ -100,23 +124,42 @@
         <label><input type="radio" name="q4_type" value="リスク"><span>リスク<small>間接・減らす。上級：起きる確率×起きたときの損失</small></span></label>
         <label><input type="radio" name="q4_type" value="チャンス"><span>チャンス<small>間接・増やす。上級：実現する確率×そのときの価値</small></span></label>
       </div>
-      <label for="q4f">年間期待効果：式と仮置きの数字<span class="req">※必須</span></label>
-      <textarea id="q4f" name="q4_formula" placeholder="例：平日の過剰人時×時間単価 × 100%（※理論上限） × 11店 × 年4回 ≒ 3,000万円"></textarea>
-      <label for="q4a">年間期待効果の金額（円／年、数字のみ）<span class="req">※必須</span></label>
-      <input type="text" id="q4a" name="q4_amount" inputmode="numeric" placeholder="例：30000000">
+      <label>効果の単位<span class="req">※必須</span></label>
+      <div class="choices">
+        <label><input type="radio" name="q4_unit" value="1店あたり"><span>1店あたり<small>飲食店が受益者のとき</small></span></label>
+        <label><input type="radio" name="q4_unit" value="1社あたり"><span>1社あたり<small>メーカー・不動産・金融など、店舗以外が受益者のとき</small></span></label>
+      </div>
+      <label for="q4s">相手の規模（効果の根拠になる数）</label>
+      <input type="text" id="q4s" name="q4_scope" placeholder="例：30店級チェーンの1店（月商10百万円）／営業が回る取扱店3,000店">
+      <label for="q4f">1単位あたり年間期待効果（利益）：式と仮置きの数字<span class="req">※必須</span></label>
+      <textarea id="q4f" name="q4_formula" placeholder="例：売上+20%＝年24百万円 × 営業利益率10%（※） ≒ 2.4百万円／店"></textarea>
+      <div class="row">
+        <div><label for="q4a">1単位あたり年間期待効果（百万円／年）<span class="req">※必須</span></label>
+          <input type="text" id="q4a" name="q4_per_unit" inputmode="decimal" placeholder="例：2.4"></div>
+        <div><label for="q4n">効果が出る単位数<span class="unit">（店／社）</span><span class="req">※必須</span></label>
+          <input type="text" id="q4n" name="q4_units" inputmode="numeric" placeholder="例：31500（販路は考えず、当てはまる範囲まで絞る）"></div>
+      </div>
+      <div class="calc" id="calc4">効果総額：<b>—</b> 百万円／年（1単位あたり × 効果が出る単位数）</div>
     </div>
 
     <div class="step hi">
       <div class="num">05</div><h2>相手と値付け</h2>
-      <p class="hint">財布の持ち主がどれだけ欲しがるか。払う人は課題の持ち主と別のことがあります。値段は「誰の財布から、年いくら × 何社」で。</p>
+      <p class="hint"><b>我々側の収益</b>です。財布の持ち主がどれだけ欲しがるか。払う人は課題の持ち主と別のことがあります。売れる単位数は、効果が出る単位数のうち向き不向きと販路を加味した数（04の数以下）。<br><b>単位：飲食店の場合は店舗、それ以外（メーカー等）は会社</b>（04と同じ単位）。</p>
       <label>興味の強さ</label>
       <div class="choices">
         <label><input type="radio" name="q5_interest" value="知りたい"><span>知りたい<small>面白い。判断は変わらない</small></span></label>
         <label><input type="radio" name="q5_interest" value="判断に使う"><span>判断に使う<small>数字があれば決め方が変わる</small></span></label>
         <label><input type="radio" name="q5_interest" value="ないと困る"><span>ないと困る<small>数字なしでは決められない</small></span></label>
       </div>
-      <label for="q5p">値付け：誰の財布から、年いくら × 何社</label>
-      <input type="text" id="q5p" name="q5_price" placeholder="例：本部のシステム費から、1店あたり年27万円 × 50社×10店">
+      <label for="q5w">誰の財布から</label>
+      <input type="text" id="q5w" name="q5_wallet" placeholder="例：本部のシステム費／メーカーの営業企画費">
+      <div class="row">
+        <div><label for="q5p">年額（百万円／単位・年）</label>
+          <input type="text" id="q5p" name="q5_price" inputmode="decimal" placeholder="例：0.12（月1万円）"></div>
+        <div><label for="q5n">売れる単位数<span class="unit">（店／社</span>、04以下）</label>
+          <input type="text" id="q5n" name="q5_sellable" inputmode="numeric" placeholder="例：10000（向き不向きを加味）"></div>
+      </div>
+      <div class="calc" id="calc5">売上上限：<b>—</b> 百万円／年（年額 × 売れる単位数）</div>
     </div>
 
     <div class="step">
@@ -126,15 +169,18 @@
 
     <div class="actions">
       <button type="submit" id="btn">提出する</button>
-      <span class="msg" id="msg">提出は1人1回です。送信後の修正はできません。</span>
+      <span class="msg" id="msg">送信後も、同じ端末からなら修正して再提出できます（前の提出に上書きされます）。</span>
     </div>
   </form>
 
   <div class="done" id="done" hidden>
     <h2>提出を受け付けました</h2>
     <p>選ばれた3本は、本人が2分で発表します。発表の順は 課題 → 仮説 → 材料 → 効果 → 値付け です。</p>
+    <p><button type="button" id="edit">修正して再提出する</button></p>
+    <p class="msg">受付時間内なら何度でも直せます。再提出は前の提出に上書きされます。控えは画面上部の「テキストをコピー」「PDFで保存」「ファイルに保存」で残せます。</p>
   </div>
 </main>
+<section id="summary"></section>
 <footer>株式会社SynapXis　｜　FLARO 社員向け勉強会 第三部 実践編</footer>
 
 <script>
@@ -143,7 +189,17 @@
   var SECRET   = "flaro-part3-2026";
 
   var form = document.getElementById("f"), btn = document.getElementById("btn"), msg = document.getElementById("msg");
-  var DRAFT_KEY = "flaro_part3_draft";
+  var DRAFT_KEY = "flaro_part3_draft", SID_KEY = "flaro_part3_sid";
+  // 提出キー：初回に作って端末に保存。再提出のときに同じキーを送ると、受け口が前の行を上書きする
+  function sid(){
+    var v = null; try{ v = localStorage.getItem(SID_KEY); }catch(e){}
+    if(!v){ v = Math.random().toString(36).slice(2,10); try{ localStorage.setItem(SID_KEY, v); }catch(e){} }
+    return v;
+  }
+  document.getElementById("edit").addEventListener("click", function(){
+    document.getElementById("done").hidden = true; form.hidden = false; btn.disabled = false;
+    msg.className="msg"; msg.textContent="修正して「提出する」を押すと、前の提出に上書きされます。"; window.scrollTo(0,0);
+  });
 
   // 下書きの保存（この端末のブラウザ内だけ。送信とは無関係）
   function saveDraft(){ try{ localStorage.setItem(DRAFT_KEY, JSON.stringify(collect())); }catch(e){} }
@@ -161,29 +217,103 @@
     return o;
   }
   form.addEventListener("input", saveDraft);
-  loadDraft();
+  loadDraft(); recalc();
 
+  var LABELS = [
+    ["name","氏名"],["title","仮説のタイトル"],
+    ["q1_issue","01 課題"],["q2_hypothesis","02 仮説"],["q3_material","03 材料"],
+    ["q4_type","04 価値の種類"],["q4_unit","04 効果の単位"],["q4_scope","04 相手の規模"],["q4_formula","04 1単位あたり効果：式と仮置き"],
+    ["q4_per_unit","04 1単位あたり年間期待効果（百万円/年）"],["q4_units","04 効果が出る単位数"],["q4_total","04 効果総額（百万円/年）"],
+    ["q5_interest","05 興味の強さ"],["q5_wallet","05 誰の財布から"],["q5_price","05 年額（百万円/単位・年）"],["q5_sellable","05 売れる単位数"],["q5_revenue","05 売上上限（百万円/年）"],
+    ["assumptions","仮置きした数字"]
+  ];
+  function snapshot(){
+    var d = collect();
+    var per=num(d.q4_per_unit), cos=num(d.q4_units), price=num(d.q5_price), sell=num(d.q5_sellable);
+    d.q4_total = (per!==null && cos!==null) ? fmt(per*cos) : "";
+    d.q5_revenue = (price!==null && sell!==null) ? fmt(price*sell) : "";
+    return d;
+  }
+  function asText(){
+    var d = snapshot(), lines = ["仮説提出フォーム（第三部 実践編）", "作成: " + new Date().toLocaleString("ja-JP"), ""];
+    LABELS.forEach(function(l){ lines.push("■ " + l[1]); lines.push(String(d[l[0]]||"").trim() || "（未入力）"); lines.push(""); });
+    return lines.join("\n");
+  }
+  function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+  function buildSummary(){
+    var d = snapshot(), rows = LABELS.map(function(l){ return "<tr><th>"+esc(l[1])+"</th><td>"+esc(String(d[l[0]]||"").trim()||"（未入力）").replace(/\n/g,"<br>")+"</td></tr>"; }).join("");
+    document.getElementById("summary").innerHTML = "<h1>仮説提出フォーム（第三部 実践編）</h1><p class='meta'>作成: "+esc(new Date().toLocaleString("ja-JP"))+"　提出キー: "+esc(sid())+"</p><table>"+rows+"</table>";
+  }
+  function flash(text){ var a=document.getElementById("auto"), old=a.textContent; a.textContent=text; setTimeout(function(){ a.textContent=old; }, 2500); }
+  document.getElementById("copy").addEventListener("click", function(){
+    var txt = asText();
+    var done = function(){ flash("コピーしました"); }, fail = function(){ window.prompt("全選択してコピーしてください", txt); };
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done, fail); } else { fail(); }
+  });
+  document.getElementById("pdf").addEventListener("click", function(){ buildSummary(); window.print(); });
+  document.getElementById("dl").addEventListener("click", function(){
+    var d = snapshot(); d.sid = sid(); d.saved_at = new Date().toISOString();
+    var blob = new Blob([JSON.stringify(d, null, 2)], {type:"application/json"});
+    var a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+    a.download = "仮説提出_" + (String(d.name||"").trim() || "無記名") + ".json"; document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    flash("ファイルに保存しました");
+  });
+  document.getElementById("ul").addEventListener("change", function(ev){
+    var f = ev.target.files && ev.target.files[0]; if(!f) return;
+    var rd = new FileReader();
+    rd.onload = function(){
+      try{
+        var d = JSON.parse(rd.result);
+        Object.keys(d).forEach(function(k){
+          form.querySelectorAll('[name="'+k+'"]').forEach(function(el){ if(el.type==="radio"){ el.checked = (el.value===d[k]); } else { el.value = d[k]==null?"":d[k]; } });
+        });
+        if(d.sid){ try{ localStorage.setItem(SID_KEY, String(d.sid)); }catch(e){} }
+        saveDraft(); recalc(); flash("読み込みました");
+      }catch(e){ flash("読み込めませんでした（形式が違います）"); }
+    };
+    rd.readAsText(f); ev.target.value = "";
+  });
   function mark(id, bad){ var el=document.getElementById(id); if(el) el.classList.toggle("err-field", bad); }
+  function num(v){ var s=String(v==null?"":v).replace(/[,，\s百万円社]/g,""); if(!s) return null; if(!/^\d+(\.\d+)?$/.test(s)) return null; return Number(s); }
+  function fmt(x){ return x.toLocaleString("ja-JP", {maximumFractionDigits:1}); }
+  function recalc(){
+    var per=num(document.getElementById("q4a").value), cos=num(document.getElementById("q4n").value);
+    var price=num(document.getElementById("q5p").value), sell=num(document.getElementById("q5n").value);
+    document.querySelector("#calc4 b").textContent = (per!==null && cos!==null) ? fmt(per*cos) : "—";
+    var u = (document.querySelector('input[name=q4_unit]:checked')||{}).value || "";
+    var ut = u==="1店あたり" ? "（店" : (u==="1社あたり" ? "（社" : "（店／社");
+    document.querySelector("label[for=q4n] .unit").textContent = ut + "）";
+    document.querySelector("label[for=q5n] .unit").textContent = ut;
+    document.querySelector("#calc5 b").textContent = (price!==null && sell!==null) ? fmt(price*sell) : "—";
+  }
+  form.addEventListener("input", recalc);
 
   form.addEventListener("submit", function(ev){
     ev.preventDefault();
     var d = collect();
-    var req = [["name","氏名"],["title","仮説のタイトル"],["q1_issue","01 課題"],["q2_hypothesis","02 仮説"],["q4_formula","04 式"],["q4_amount","04 金額"]];
-    var ids = {name:"name",title:"title",q1_issue:"q1",q2_hypothesis:"q2",q4_formula:"q4f",q4_amount:"q4a"};
+    var req = [["name","氏名"],["title","仮説のタイトル"],["q1_issue","01 課題"],["q2_hypothesis","02 仮説"],["q4_unit","04 効果の単位"],["q4_formula","04 式"],["q4_per_unit","04 1単位あたり効果"],["q4_units","04 効果が出る単位数"]];
+    var ids = {name:"name",title:"title",q1_issue:"q1",q2_hypothesis:"q2",q4_formula:"q4f",q4_per_unit:"q4a",q4_units:"q4n"};
     var missing = [];
-    req.forEach(function(r){ var bad = !String(d[r[0]]||"").trim(); mark(ids[r[0]], bad); if(bad) missing.push(r[1]); });
-    var amt = String(d.q4_amount||"").replace(/[,，\s円]/g,"");
-    if(!/^\d+$/.test(amt)){ mark("q4a", true); if(missing.indexOf("04 金額")<0) missing.push("04 金額は半角数字のみ"); }
+    req.forEach(function(r){ var bad = !String(d[r[0]]||"").trim(); if(ids[r[0]]) mark(ids[r[0]], bad); if(bad) missing.push(r[1]); });
+    var per = num(d.q4_per_unit), cos = num(d.q4_units), price = num(d.q5_price), sell = num(d.q5_sellable);
+    if(String(d.q4_per_unit||"").trim() && per===null){ mark("q4a", true); missing.push("04 1単位あたり効果は数字のみ"); }
+    if(String(d.q4_units||"").trim() && cos===null){ mark("q4n", true); missing.push("04 効果が出る単位数は数字のみ"); }
+    if(String(d.q5_price||"").trim() && price===null){ mark("q5p", true); missing.push("05 年額は数字のみ"); }
+    if(String(d.q5_sellable||"").trim() && sell===null){ mark("q5n", true); missing.push("05 売れる単位数は数字のみ"); }
+    if(sell!==null && cos!==null && sell>cos){ mark("q5n", true); missing.push("05 売れる単位数は、効果が出る単位数以下に"); }
     if(missing.length){ msg.className="msg err"; msg.textContent="未入力または形式の誤り："+missing.join("、"); return; }
-    d.q4_amount = amt; d.secret = SECRET;
+    d.q4_per_unit = per; d.q4_units = cos; d.q4_total = Math.round(per*cos*100)/100;
+    d.q5_price = price===null ? "" : price; d.q5_sellable = sell===null ? "" : sell;
+    d.q5_revenue = (price!==null && sell!==null) ? Math.round(price*sell*100)/100 : "";
+    d.secret = SECRET; d.sid = sid();
 
     btn.disabled = true; msg.className="msg"; msg.textContent="送信中…";
     fetch(ENDPOINT, { method:"POST", body: JSON.stringify(d) })
       .then(function(r){ return r.json(); })
       .then(function(j){
         if(j && j.ok){
-          try{ localStorage.removeItem(DRAFT_KEY); }catch(e){}
           form.hidden = true; document.getElementById("done").hidden = false; window.scrollTo(0,0);
+          document.querySelector("#done h2").textContent = j.updated ? "再提出を受け付けました（前の提出に上書き）" : "提出を受け付けました";
         } else {
           var reason = (j && j.reason) || "";
           var text = reason==="closed" ? "受付時間外です。講師に声をかけてください。" :
