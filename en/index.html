@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G8JMDY6XNQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G8JMDY6XNQ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>SynapXis Inc. | Data Analytics and Management Consulting, Tokyo</title>
+<meta name="description" content="SynapXis Inc. is a Tokyo-based data analytics and management consulting firm. We combine data that companies hold in separate places to find what drives performance, and turn it into decisions.">
+<link rel="canonical" href="https://synapxis.jp/en/">
+<link rel="alternate" hreflang="ja" href="https://synapxis.jp/">
+<link rel="alternate" hreflang="en" href="https://synapxis.jp/en/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SynapXis Inc.">
+<meta property="og:title" content="SynapXis Inc. | Data Analytics and Management Consulting">
+<meta property="og:description" content="Turning dormant data into decisions.">
+<meta property="og:url" content="https://synapxis.jp/en/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://synapxis.jp/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light dark;
+  --navy:#0D2340;
+  --brass-text:#8A6636;
+  --navy-deep:#081A31;
+  --paper:#F7F5F0;
+  --paper-warm:#EFECE4;
+  --brass:#B08D57;
+  --blue:#2EA6FF;
+  --blue-tint:#D5EDFF;
+  --ink:#1C2430;
+  --muted:#5E6B7A;
+  --rule:rgba(13,35,64,.14);
+  /* 背景・文字はここで切り替える（--paper は紺地の上の文字色として固定で使う） */
+  --bg:#F7F5F0;
+  --bg-alt:#EFECE4;
+  --surface:#F7F5F0;
+  --heading:#0D2340;
+  --fig-core:#0D2340;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#0E1721;
+    --bg-alt:#14202C;
+    --surface:#14202C;
+    --heading:#DEE9F7;
+    --ink:#E4EAF2;
+    --muted:#A0AEBD;
+    --rule:rgba(213,237,255,.16);
+    --brass-text:#D3AA6C;
+    --fig-core:#1E3350;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background-color:var(--bg)}
+body{
+  background-color:var(--bg);
+  color:var(--ink);
+  font-family:"Noto Sans JP",system-ui,sans-serif;
+  font-size:16px;line-height:1.95;
+  -webkit-font-smoothing:antialiased;
+  font-feature-settings:"palt" 1;
+}
+.wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+
+/* ---- utility label ---- */
+.label{
+  font-family:"IBM Plex Mono",monospace;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--brass-text);font-weight:500;
+}
+
+/* ---- header ---- */
+header{
+  position:sticky;top:0;z-index:50;
+  background-color:var(--bg);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--rule);
+}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:28px;height:66px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--heading);flex:none}
+.brand svg.logo{height:26px;width:auto;display:block;flex:none}
+nav{flex:1;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+nav::-webkit-scrollbar{display:none}
+nav ul{display:flex;gap:26px;list-style:none;width:max-content;margin-left:auto;white-space:nowrap}
+nav a{
+  display:block;text-decoration:none;color:var(--muted);font-size:13.5px;letter-spacing:.06em;
+  padding:4px 0 3px;border-bottom:1px solid transparent;transition:.2s;
+}
+nav a:hover,nav a:focus-visible{color:var(--heading);border-bottom-color:var(--brass)}
+@media(max-width:1000px){
+  .bar{flex-wrap:wrap;height:auto;gap:0;padding-top:14px}
+  .brand{height:30px}
+  nav{flex:0 0 calc(100% + 56px);margin:6px -28px 0;
+      -webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
+  nav ul{gap:22px;margin-left:0;padding:4px 40px 10px 28px}
+  nav a{font-size:13px}
+}
+
+/* ---- hero : the X intersection ---- */
+.hero{
+  position:relative;overflow:hidden;
+  background-color:var(--navy);color:var(--paper);
+  background-size:cover;background-position:center;
+  padding:104px 0 96px;
+}
+/* ▼ 背景に写真を入れる場合、下の1行のコメントを外してファイル名を指定 */
+/* .hero{background-image:url("images/hero.jpg")} */
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(100deg,rgba(13,35,64,.94) 0%,rgba(13,35,64,.86) 55%,rgba(8,26,49,.78) 100%);
+}
+.hero .wrap{position:relative;z-index:4}
+#net{position:absolute;inset:0;width:100%;height:100%;z-index:2;display:block}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:3;pointer-events:none;
+  background:linear-gradient(95deg,rgba(13,35,64,.97) 0%,rgba(13,35,64,.86) 34%,rgba(13,35,64,.30) 62%,rgba(13,35,64,0) 100%);
+}
+@media(max-width:760px){
+  .hero::after{background:linear-gradient(180deg,rgba(13,35,64,.72) 0%,rgba(13,35,64,.92) 45%,rgba(13,35,64,.97) 100%)}
+}
+.hero .label{color:var(--blue-tint);opacity:.75}
+h1{
+  font-family:"Noto Serif JP",serif;
+  font-weight:600;
+  font-size:clamp(30px,5.4vw,54px);
+  line-height:1.45;letter-spacing:.02em;
+  margin:20px 0 26px;
+}
+h1 .hl{
+  background:linear-gradient(transparent 62%,rgba(46,166,255,.34) 62%);
+  padding:0 .06em;
+}
+.lead{max-width:620px;font-size:16.5px;color:rgba(247,245,240,.86);line-height:2.05}
+.tagline{
+  margin-top:34px;padding-top:22px;border-top:1px solid rgba(213,237,255,.22);
+  font-family:"Noto Serif JP",serif;font-size:15px;letter-spacing:.16em;
+  color:var(--blue-tint);opacity:.9;
+}
+
+/* ---- sections ---- */
+section{padding:84px 0;background-color:var(--bg)}
+#founder{background-color:var(--bg-alt)}
+h2{
+  font-family:"Noto Serif JP",serif;font-weight:600;
+  font-size:clamp(21px,3vw,27px);line-height:1.6;letter-spacing:.03em;
+  color:var(--heading);margin:12px 0 34px;
+}
+.sub{max-width:660px;color:var(--muted);font-size:15.5px;margin-bottom:44px}
+
+/* services */
+.svc{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+@media(min-width:820px){.svc{grid-template-columns:repeat(3,1fr)}}
+.svc>div{background:var(--surface);padding:34px 30px}
+.svc h3{
+  font-family:"Noto Serif JP",serif;font-size:17.5px;font-weight:600;
+  color:var(--heading);margin:14px 0 14px;line-height:1.6;
+}
+.svc p{font-size:14.5px;color:var(--muted);line-height:2}
+
+/* name origin */
+#mvv{background-color:var(--bg-alt)}
+.trio{display:grid;gap:38px}
+@media(min-width:820px){.trio{grid-template-columns:repeat(3,1fr);gap:44px}}
+.trio h3{
+  font-family:"Noto Serif JP",serif;font-size:18px;font-weight:600;
+  color:var(--heading);margin:16px 0 12px;
+}
+.trio p{font-size:14.5px;color:var(--muted);line-height:2}
+.mark{display:block;width:26px;height:26px}
+
+/* mvv */
+.mv{display:grid;gap:40px;margin-bottom:56px}
+@media(min-width:820px){.mv{grid-template-columns:1fr 1fr;gap:52px}}
+.mvlabel{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--brass-text);margin-bottom:14px;
+}
+.mvstate{
+  font-family:"Noto Serif JP",serif;font-weight:600;
+  font-size:clamp(19px,2.4vw,23px);line-height:1.75;color:var(--heading);
+  padding-left:18px;border-left:3px solid var(--brass);
+}
+.mvbody{font-size:14.5px;color:var(--muted);line-height:2;margin-top:18px}
+.vhead{padding-top:34px;border-top:1px solid var(--rule)}
+.values{list-style:none;display:grid;gap:16px}
+@media(min-width:820px){.values{grid-template-columns:1fr 1fr;gap:18px 44px}}
+.values li{
+  font-size:14.5px;color:var(--muted);line-height:1.95;
+  padding-left:20px;position:relative;
+}
+.values li::before{
+  content:"";position:absolute;left:0;top:.78em;
+  width:7px;height:7px;background:var(--blue);transform:rotate(45deg);
+}
+.values b{color:var(--heading);font-weight:500;display:block}
+
+/* flow */
+#flow{background-color:var(--bg-alt)}
+.flow{list-style:none;display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.flow li{background:var(--surface);padding:26px 28px}
+@media(min-width:900px){.flow{grid-template-columns:repeat(5,1fr)}.flow li{padding:26px 22px}}
+.step{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.18em;
+  color:var(--brass-text);display:block;
+}
+.flow h3{font-family:"Noto Serif JP",serif;font-size:15.5px;font-weight:600;color:var(--heading);margin:12px 0 10px;line-height:1.6}
+.flow p{font-size:13.5px;color:var(--muted);line-height:1.95}
+.flownote{
+  margin-top:26px;font-size:13px;color:var(--muted);line-height:1.9;
+  padding-left:16px;border-left:2px solid var(--rule);
+}
+.mailto a{color:inherit;text-decoration:none;border-bottom:1px solid var(--brass)}
+
+/* usecase note */
+.usecase{
+  margin-top:30px;padding-left:16px;border-left:2px solid var(--rule);
+  font-size:13.5px;color:var(--muted);line-height:1.95;
+}
+.usecase a{color:var(--heading);text-decoration:none;border-bottom:1px solid var(--brass)}
+
+/* posts */
+#insights{background-color:var(--bg-alt)}
+.posts{list-style:none;border-top:1px solid var(--rule)}
+.posts a{
+  display:grid;gap:6px;padding:22px 4px;border-bottom:1px solid var(--rule);
+  text-decoration:none;color:inherit;
+}
+@media(min-width:820px){.posts a{grid-template-columns:158px 1fr;gap:4px 28px;align-items:start}
+  .posts .pmeta{grid-row:1 / span 2;padding-top:5px}
+  .posts .pdesc{grid-column:2}}
+.posts a:hover .ptitle{color:var(--brass-text)}
+.pdate{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:500;color:var(--brass-text)}
+.pmeta{display:block;line-height:1.7}
+.ptag{display:block;font-style:normal;font-size:11.5px;letter-spacing:.02em;color:var(--muted);margin-top:3px}
+@media(max-width:819px){.pmeta{display:flex;gap:14px;align-items:baseline}.ptag{margin-top:0}}
+.pnew{
+  display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:700;
+  letter-spacing:.12em;color:#06203A;background:var(--blue);
+  padding:2px 7px;margin-right:10px;vertical-align:2px;
+}
+.ptitle{font-family:"Noto Serif JP",serif;font-size:17px;font-weight:600;color:var(--heading);line-height:1.6}
+.pdesc{font-size:13.5px;color:var(--muted);line-height:1.9}
+
+/* map */
+.mapbox{
+  margin-top:44px;border:1px solid var(--rule);
+  line-height:0;background:var(--bg-alt);
+}
+.mapbox iframe{width:100%;height:340px;min-height:340px;border:0;display:block;filter:grayscale(.35) contrast(1.02)}
+.mapnote{
+  display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
+  line-height:1.7;font-size:13px;color:var(--muted);
+  padding:14px 18px;border-top:1px solid var(--rule);background:var(--surface);
+}
+.mapnote a{color:var(--heading);text-decoration:none;border-bottom:1px solid var(--brass)}
+.mapnote a:hover{color:var(--brass-text)}
+
+/* issue cards */
+.icards{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+@media(min-width:820px){.icards{grid-template-columns:repeat(3,1fr)}}
+.icards>div{background:var(--surface);padding:34px 30px 36px}
+.icards .ico{width:32px;height:32px;display:block;color:var(--blue)}
+.icards .num{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.22em;
+  color:var(--brass-text);display:block;margin:18px 0 6px;
+}
+.icards h3{
+  font-family:"Noto Serif JP",serif;font-size:17.5px;font-weight:600;
+  color:var(--heading);margin:0 0 13px;line-height:1.6;
+}
+.icards p{font-size:14.5px;color:var(--muted);line-height:2}
+
+/* method figure */
+#method{background-color:var(--bg-alt)}
+.fig{margin-top:8px}
+.fig svg{width:100%;height:auto;display:block;font-family:"Noto Sans JP",system-ui,sans-serif}
+.fig .sp{display:none}
+@media(max-width:700px){.fig .pc{display:none}.fig .sp{display:block;max-width:420px;margin:0 auto}}
+.figcap{
+  margin-top:26px;padding-left:16px;border-left:2px solid var(--rule);
+  font-size:13.5px;color:var(--muted);line-height:1.95;max-width:760px;
+}
+
+/* edge (method の補足) */
+.edge{margin-top:52px;padding-top:36px;border-top:1px solid var(--rule)}
+.edgelead{
+  font-family:"Noto Serif JP",serif;font-size:17px;font-weight:600;
+  color:var(--heading);line-height:1.7;margin-bottom:30px;
+}
+
+/* approach */
+.approach{display:grid;gap:34px}
+@media(min-width:820px){.approach{grid-template-columns:repeat(3,1fr);gap:28px}}
+.card{
+  background:var(--surface);border:1px solid var(--rule);
+  border-left:3px solid var(--brass);padding:30px 30px 32px;
+}
+.card h3{font-family:"Noto Serif JP",serif;font-size:17px;font-weight:600;color:var(--heading);margin-bottom:12px}
+.card p{font-size:14.5px;color:var(--muted);line-height:2}
+
+/* partners */
+#partners .pcard{background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--brass);padding:30px 30px 32px;max-width:760px}
+.pname{font-family:"Noto Serif JP",serif;font-size:19px;font-weight:600;color:var(--heading);margin-bottom:12px}
+.ptags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;list-style:none}
+.ptags li{font-size:12.5px;color:var(--heading);border:1px solid var(--rule);border-radius:999px;padding:2px 14px;line-height:1.9}
+.pcard dl{display:grid;gap:14px}
+.pcard dt{font-size:12.5px;font-weight:700;color:var(--muted);letter-spacing:.06em}
+.pcard dd{font-size:14.5px;color:var(--ink);line-height:2}
+.pcard .more a{color:var(--heading);text-decoration:none;border-bottom:1px solid var(--brass)}
+
+/* founder */
+.founder{display:grid;gap:34px;align-items:start}
+@media(min-width:820px){.founder{grid-template-columns:230px 1fr}}
+.fname{font-family:"Noto Serif JP",serif;font-size:26px;font-weight:600;color:var(--heading);line-height:1.5}
+.frole{font-size:13px;color:var(--brass-text);letter-spacing:.1em;margin-top:6px}
+.founder p{font-size:14.5px;color:var(--muted);line-height:2.1}
+.founder p+p{margin-top:16px}
+.founder p.fname{font-size:26px;color:var(--heading);line-height:1.5}
+.founder p.frole{font-size:13px;color:var(--brass-text);line-height:1.6;margin-top:6px}
+.more{margin-top:22px}
+.more a{
+  font-size:14px;color:var(--heading);text-decoration:none;
+  border-bottom:1px solid var(--brass);padding-bottom:2px;
+}
+.more a:hover{color:var(--brass-text)}
+
+/* company table */
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{text-align:left;padding:17px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+th{width:150px;font-weight:500;color:var(--heading);letter-spacing:.06em}
+td{color:var(--muted)}
+@media(max-width:600px){
+  th,td{display:block;border:none;padding:0}
+  th{padding-top:18px}
+  td{padding-bottom:16px;border-bottom:1px solid var(--rule)}
+}
+
+/* contact */
+#contact{background-color:var(--navy);color:var(--paper)}
+#contact h2{color:var(--paper)}
+#contact .sub{color:rgba(247,245,240,.72)}
+.ctrow{display:grid;gap:26px}
+@media(min-width:820px){.ctrow{grid-template-columns:1fr 1fr;align-items:center}}
+.tel{font-family:"IBM Plex Mono",monospace;font-size:27px;letter-spacing:.04em;color:var(--blue-tint)}
+.tel small{display:block;font-family:"Noto Sans JP",sans-serif;font-size:12px;letter-spacing:.14em;color:rgba(247,245,240,.55);margin-bottom:8px}
+.btn{
+  display:inline-block;text-decoration:none;
+  background:var(--blue);color:#06203A;font-weight:700;font-size:15px;letter-spacing:.06em;
+  padding:17px 36px;border:1px solid var(--blue);transition:.2s;
+}
+.btn:hover,.btn:focus-visible{background:transparent;color:var(--blue-tint)}
+
+footer{background-color:var(--navy-deep);color:rgba(247,245,240,.5);font-size:12.5px;padding:26px 0}
+.flinks{display:flex;gap:20px;flex-wrap:wrap}
+.flinks a{color:rgba(247,245,240,.66);text-decoration:none;border-bottom:1px solid rgba(176,141,87,.5)}
+.flinks a:hover{color:var(--blue-tint)}
+.mailline{display:block;font-size:17px;letter-spacing:.02em;margin-top:10px}
+.fbar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+
+/* ---- shortcuts / back to top ---- */
+html{scroll-padding-top:76px}
+@media(max-width:1000px){html{scroll-padding-top:110px}}
+.totop{
+  position:fixed;right:20px;bottom:20px;z-index:60;
+  width:48px;height:48px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--navy);color:var(--paper);text-decoration:none;
+  border:1px solid rgba(213,237,255,.28);box-shadow:0 4px 14px rgba(13,35,64,.22);
+  opacity:0;visibility:hidden;transform:translateY(8px);transition:.25s;
+}
+.totop.show{opacity:1;visibility:visible;transform:none}
+.totop:hover,.totop:focus-visible{background:#16345C}
+.totop svg{width:20px;height:20px}
+@media(prefers-color-scheme:dark){.totop{background:#2EA6FF;color:#0D2340;border-color:transparent;box-shadow:0 4px 14px rgba(0,0,0,.45)}.totop:hover,.totop:focus-visible{background:#5BBBFF}}
+@media print{.totop{display:none}}
+
+a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+
+@media print{
+  :root{--bg:#fff;--bg-alt:#fff;--surface:#fff;--heading:#0D2340;--ink:#1C2430;--muted:#3F4B58;--rule:rgba(13,35,64,.28);--brass-text:#7A5A2C}
+  header{position:static;border-bottom:1px solid var(--rule)}
+  #net{display:none}
+  section,.head,.cta{padding:28px 0;break-inside:avoid}
+  h2,h3{break-after:avoid}
+  .svc,.flow,.approach,.trio,.mv,.career,.entries{break-inside:avoid}
+  a{text-decoration:none}
+  footer{color:#333}
+}
+
+/* ---- en ---- */
+body{font-feature-settings:normal;letter-spacing:0}
+h1{letter-spacing:0}
+.langsw a{color:var(--heading)!important}
+.areas{margin-top:30px;padding-left:16px;border-left:2px solid var(--rule);font-size:14px;color:var(--muted);line-height:1.95}
+.roles{list-style:none;margin-top:18px;font-size:14px;color:var(--muted);line-height:1.9}
+.roles li{padding-left:14px;position:relative}
+.roles li::before{content:"";position:absolute;left:0;top:.85em;width:6px;height:1px;background:var(--brass)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top">
+      <svg class="logo" viewBox="29.5 28 452 92" role="img" aria-label="SynapXis"><path fill="#2EA6FF" d="M 77.964844 56.894531 L 101.339844 28.324219 L 116.273438 43.257812 L 87.703125 66.632812 Z M 58.484375 66.632812 L 29.914062 43.257812 L 44.851562 28.324219 L 68.226562 56.894531 Z M 68.226562 86.113281 L 44.851562 114.683594 L 29.914062 99.75 L 58.484375 76.371094 Z M 87.703125 76.371094 L 116.273438 99.75 L 101.339844 114.683594 L 77.964844 86.113281 Z M 87.703125 76.371094 "/><path fill="currentColor" d="M 168.289062 101.488281 C 164.210938 101.488281 160.539062 100.796875 157.273438 99.410156 C 154.007812 98.023438 151.316406 96.042969 149.199219 93.472656 C 147.078125 90.902344 145.699219 87.855469 145.0625 84.335938 L 152.417969 83.179688 C 153.351562 86.800781 155.289062 89.632812 158.234375 91.671875 C 161.179688 93.710938 164.652344 94.730469 168.648438 94.730469 C 171.234375 94.730469 173.574219 94.324219 175.664062 93.511719 C 177.757812 92.699219 179.417969 91.535156 180.644531 90.015625 C 181.871094 88.496094 182.484375 86.695312 182.484375 84.617188 C 182.484375 83.335938 182.261719 82.238281 181.824219 81.320312 C 181.382812 80.398438 180.785156 79.613281 180.023438 78.960938 C 179.265625 78.308594 178.40625 77.753906 177.445312 77.300781 C 176.484375 76.847656 175.484375 76.472656 174.445312 76.179688 L 159.773438 71.824219 C 158.175781 71.34375 156.628906 70.738281 155.136719 70.003906 C 153.644531 69.269531 152.308594 68.351562 151.136719 67.246094 C 149.964844 66.140625 149.03125 64.804688 148.339844 63.246094 C 147.644531 61.6875 147.300781 59.84375 147.300781 57.710938 C 147.300781 54.296875 148.1875 51.386719 149.957031 48.972656 C 151.730469 46.5625 154.136719 44.714844 157.175781 43.4375 C 160.214844 42.15625 163.636719 41.53125 167.449219 41.558594 C 171.316406 41.585938 174.773438 42.269531 177.824219 43.617188 C 180.875 44.960938 183.410156 46.886719 185.421875 49.394531 C 187.433594 51.898438 188.785156 54.898438 189.480469 58.390625 L 181.921875 59.710938 C 181.523438 57.363281 180.636719 55.34375 179.265625 53.652344 C 177.890625 51.960938 176.179688 50.652344 174.125 49.734375 C 172.074219 48.8125 169.820312 48.339844 167.371094 48.3125 C 165.023438 48.289062 162.90625 48.660156 161.011719 49.433594 C 159.121094 50.207031 157.613281 51.28125 156.496094 52.652344 C 155.375 54.023438 154.816406 55.605469 154.816406 57.390625 C 154.816406 59.148438 155.324219 60.570312 156.335938 61.648438 C 157.347656 62.726562 158.59375 63.582031 160.074219 64.207031 C 161.554688 64.832031 163 65.347656 164.410156 65.746094 L 175.367188 68.90625 C 176.617188 69.25 178.066406 69.730469 179.703125 70.34375 C 181.34375 70.957031 182.9375 71.816406 184.480469 72.921875 C 186.027344 74.027344 187.308594 75.496094 188.320312 77.320312 C 189.332031 79.144531 189.839844 81.445312 189.839844 84.21875 C 189.839844 86.988281 189.285156 89.453125 188.179688 91.613281 C 187.074219 93.773438 185.535156 95.578125 183.5625 97.03125 C 181.589844 98.484375 179.296875 99.589844 176.683594 100.347656 C 174.074219 101.109375 171.273438 101.488281 168.289062 101.488281 Z M 203.03125 119.480469 L 211.390625 96.769531 L 211.507812 103.488281 L 192.636719 57.109375 L 200.113281 57.109375 L 214.90625 94.414062 L 212.347656 94.414062 L 226.222656 57.109375 L 233.457031 57.109375 L 209.949219 119.480469 Z M 270.402344 100.289062 L 270.402344 78.660156 C 270.402344 76.609375 270.21875 74.636719 269.859375 72.742188 C 269.5 70.851562 268.875 69.152344 267.980469 67.644531 C 267.089844 66.140625 265.890625 64.945312 264.382812 64.066406 C 262.878906 63.1875 260.976562 62.746094 258.6875 62.746094 C 256.902344 62.746094 255.28125 63.046875 253.828125 63.648438 C 252.375 64.246094 251.128906 65.160156 250.089844 66.386719 C 249.050781 67.613281 248.246094 69.152344 247.671875 71.003906 C 247.097656 72.855469 246.8125 75.035156 246.8125 77.539062 L 242.132812 76.101562 C 242.132812 71.917969 242.886719 68.324219 244.394531 65.328125 C 245.898438 62.328125 248.019531 60.023438 250.75 58.410156 C 253.480469 56.796875 256.699219 55.992188 260.40625 55.992188 C 263.203125 55.992188 265.589844 56.429688 267.5625 57.308594 C 269.535156 58.191406 271.171875 59.355469 272.480469 60.808594 C 273.785156 62.261719 274.8125 63.886719 275.558594 65.6875 C 276.304688 67.484375 276.832031 69.3125 277.136719 71.164062 C 277.445312 73.015625 277.597656 74.769531 277.597656 76.421875 L 277.597656 100.289062 Z M 239.617188 100.289062 L 239.617188 57.109375 L 246.011719 57.109375 L 246.011719 68.664062 L 246.8125 68.664062 L 246.8125 100.289062 Z M 299.867188 101.488281 C 296.640625 101.488281 293.941406 100.894531 291.769531 99.710938 C 289.597656 98.523438 287.957031 96.957031 286.851562 95.011719 C 285.746094 93.066406 285.195312 90.933594 285.195312 88.613281 C 285.195312 86.347656 285.625 84.382812 286.492188 82.71875 C 287.359375 81.050781 288.578125 79.667969 290.152344 78.558594 C 291.722656 77.453125 293.601562 76.582031 295.789062 75.941406 C 297.839844 75.382812 300.140625 74.894531 302.683594 74.480469 C 305.230469 74.070312 307.808594 73.6875 310.421875 73.34375 C 313.035156 72.996094 315.472656 72.664062 317.738281 72.34375 L 315.179688 73.820312 C 315.257812 69.984375 314.492188 67.144531 312.878906 65.304688 C 311.269531 63.46875 308.488281 62.546875 304.542969 62.546875 C 301.933594 62.546875 299.648438 63.140625 297.6875 64.328125 C 295.726562 65.511719 294.347656 67.4375 293.550781 70.105469 L 286.792969 68.066406 C 287.832031 64.28125 289.84375 61.308594 292.828125 59.148438 C 295.816406 56.992188 299.746094 55.910156 304.625 55.910156 C 308.542969 55.910156 311.90625 56.609375 314.71875 58.011719 C 317.53125 59.410156 319.550781 61.519531 320.777344 64.347656 C 321.390625 65.679688 321.777344 67.125 321.9375 68.683594 C 322.097656 70.242188 322.175781 71.875 322.175781 73.582031 L 322.175781 100.289062 L 315.859375 100.289062 L 315.859375 89.933594 L 317.339844 90.894531 C 315.710938 94.386719 313.441406 97.023438 310.519531 98.808594 C 307.601562 100.597656 304.050781 101.488281 299.867188 101.488281 Z M 300.945312 95.53125 C 303.503906 95.53125 305.722656 95.070312 307.601562 94.152344 C 309.480469 93.234375 310.996094 92.019531 312.140625 90.515625 C 313.285156 89.007812 314.03125 87.363281 314.378906 85.578125 C 314.78125 84.242188 315 82.757812 315.039062 81.117188 C 315.078125 79.480469 315.097656 78.21875 315.097656 77.339844 L 317.578125 78.421875 C 315.257812 78.738281 312.980469 79.046875 310.742188 79.339844 C 308.503906 79.632812 306.382812 79.945312 304.382812 80.277344 C 302.386719 80.613281 300.585938 81.003906 298.988281 81.457031 C 297.8125 81.832031 296.714844 82.3125 295.6875 82.898438 C 294.664062 83.484375 293.835938 84.238281 293.210938 85.15625 C 292.582031 86.078125 292.269531 87.214844 292.269531 88.574219 C 292.269531 89.746094 292.570312 90.867188 293.167969 91.933594 C 293.769531 93 294.703125 93.867188 295.96875 94.53125 C 297.234375 95.199219 298.894531 95.53125 300.945312 95.53125 Z M 352 101.488281 C 347.949219 101.488281 344.539062 100.484375 341.765625 98.46875 C 338.996094 96.457031 336.894531 93.726562 335.46875 90.273438 C 334.042969 86.824219 333.332031 82.953125 333.332031 78.660156 C 333.332031 74.316406 334.042969 70.425781 335.46875 66.984375 C 336.894531 63.546875 339 60.839844 341.785156 58.871094 C 344.570312 56.898438 347.988281 55.910156 352.042969 55.910156 C 356.039062 55.910156 359.484375 56.902344 362.375 58.890625 C 365.269531 60.875 367.488281 63.585938 369.035156 67.027344 C 370.578125 70.464844 371.351562 74.34375 371.351562 78.660156 C 371.351562 82.976562 370.578125 86.855469 369.035156 90.292969 C 367.488281 93.734375 365.269531 96.457031 362.375 98.46875 C 359.484375 100.484375 356.027344 101.488281 352 101.488281 Z M 332.132812 119.480469 L 332.132812 57.109375 L 338.488281 57.109375 L 338.488281 88.894531 L 339.289062 88.894531 L 339.289062 119.480469 Z M 351.121094 94.972656 C 353.972656 94.972656 356.332031 94.253906 358.199219 92.8125 C 360.0625 91.375 361.464844 89.421875 362.398438 86.957031 C 363.328125 84.492188 363.796875 81.726562 363.796875 78.660156 C 363.796875 75.621094 363.335938 72.875 362.417969 70.425781 C 361.496094 67.972656 360.085938 66.027344 358.179688 64.585938 C 356.273438 63.148438 353.855469 62.425781 350.921875 62.425781 C 348.125 62.425781 345.804688 63.113281 343.964844 64.488281 C 342.125 65.859375 340.753906 67.765625 339.847656 70.203125 C 338.941406 72.644531 338.488281 75.460938 338.488281 78.660156 C 338.488281 81.804688 338.933594 84.609375 339.828125 87.074219 C 340.71875 89.542969 342.097656 91.472656 343.964844 92.875 C 345.832031 94.273438 348.214844 94.972656 351.121094 94.972656 Z M 373.351562 100.289062 L 393.140625 71.144531 L 373.871094 42.71875 L 382.546875 42.71875 L 397.460938 65.144531 L 412.332031 42.71875 L 421.046875 42.71875 L 401.777344 71.144531 L 421.527344 100.289062 L 412.851562 100.289062 L 397.460938 77.179688 L 382.066406 100.289062 Z M 428.324219 49.472656 L 428.324219 42.117188 L 435.441406 42.117188 L 435.441406 49.472656 Z M 428.324219 100.289062 L 428.324219 57.109375 L 435.441406 57.109375 L 435.441406 100.289062 Z M 463.347656 101.449219 C 458.203125 101.449219 453.984375 100.324219 450.695312 98.070312 C 447.402344 95.816406 445.382812 92.667969 444.636719 88.613281 L 451.914062 87.457031 C 452.5 89.800781 453.847656 91.660156 455.953125 93.03125 C 458.058594 94.40625 460.667969 95.09375 463.789062 95.09375 C 466.746094 95.09375 469.066406 94.480469 470.746094 93.253906 C 472.421875 92.027344 473.261719 90.359375 473.261719 88.253906 C 473.261719 87.027344 472.984375 86.035156 472.421875 85.277344 C 471.863281 84.515625 470.710938 83.804688 468.964844 83.136719 C 467.21875 82.472656 464.585938 81.671875 461.070312 80.738281 C 457.257812 79.726562 454.257812 78.671875 452.074219 77.582031 C 449.886719 76.488281 448.328125 75.222656 447.394531 73.78125 C 446.460938 72.34375 445.996094 70.597656 445.996094 68.542969 C 445.996094 66.011719 446.6875 63.792969 448.074219 61.886719 C 449.460938 59.980469 451.402344 58.507812 453.894531 57.46875 C 456.386719 56.429688 459.285156 55.910156 462.589844 55.910156 C 465.867188 55.910156 468.796875 56.429688 471.382812 57.46875 C 473.96875 58.507812 476.054688 59.980469 477.640625 61.886719 C 479.226562 63.792969 480.167969 66.011719 480.460938 68.542969 L 473.183594 69.863281 C 472.835938 67.546875 471.722656 65.71875 469.84375 64.386719 C 467.964844 63.054688 465.546875 62.347656 462.589844 62.269531 C 459.789062 62.160156 457.519531 62.652344 455.773438 63.746094 C 454.027344 64.839844 453.152344 66.320312 453.152344 68.183594 C 453.152344 69.222656 453.480469 70.117188 454.132812 70.863281 C 454.785156 71.609375 456 72.316406 457.769531 72.984375 C 459.542969 73.648438 462.121094 74.410156 465.507812 75.261719 C 469.320312 76.222656 472.324219 77.265625 474.523438 78.398438 C 476.722656 79.53125 478.289062 80.867188 479.21875 82.398438 C 480.152344 83.929688 480.621094 85.816406 480.621094 88.054688 C 480.621094 92.214844 479.085938 95.484375 476.023438 97.871094 C 472.957031 100.257812 468.730469 101.449219 463.347656 101.449219 Z M 463.347656 101.449219 "/></svg>
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#founder">Founder</a></li>
+        <li><a href="#partners">Partner</a></li>
+        <li><a href="#company">Company</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="langsw"><a href="../" lang="ja" hreflang="ja">日本語</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="label">SynapXis Inc.</p>
+    <h1>Turning dormant data<br>into <span class="hl">decisions</span>.</h1>
+    <p class="lead">
+      SynapXis is a data analytics and management consulting firm based in Tokyo.
+      We bring together data that companies hold in separate places, such as customer feedback, employee surveys, sales and operations,
+      to identify what actually drives performance. We do not stop at the report: we work with you on what to do next.
+    </p>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <p class="label">Services</p>
+    <h2>What we do</h2>
+    <div class="svc">
+      <div>
+        <p class="label">01 — Analytics</p>
+        <h3>Data integration and analysis</h3>
+        <p>We reconnect data you have been looking at in silos and pin down, in numbers, what moves your results.</p>
+      </div>
+      <div>
+        <p class="label">02 — Advisory</p>
+        <h3>Management consulting and advisory</h3>
+        <p>We turn findings into actions and stay with you until the numbers move.</p>
+      </div>
+      <div>
+        <p class="label">03 — Outreach</p>
+        <h3>Speaking, writing and supervision</h3>
+        <p>Talks for industry associations and seminars, columns for trade media, and editorial supervision.</p>
+      </div>
+    </div>
+    <p class="areas">
+      Typical themes: performance gaps between sites and stores / the link between customer satisfaction and sales / drivers of employee retention / KPI design for sales teams / evaluation of promotions.
+      Our work covers service industries including restaurants, hotels, hot-spring and bathing facilities, beauty salons, retail and professional sports.
+    </p>
+  </div>
+</section>
+
+<section id="founder">
+  <div class="wrap">
+    <p class="label">Founder</p>
+    <h2>Who leads the work</h2>
+    <div class="founder">
+      <div>
+        <p class="fname">Takato Yamaguchi</p>
+        <p class="frole">Representative Director &amp; CEO</p>
+      </div>
+      <div>
+        <p>Takato began his career in finance and corporate planning at Sojitz Corporation, then worked as a strategy consultant at Accenture. He went on to lead a business unit at MISUMI Group and served as an Executive Officer at Accordia Golf, before joining the private equity firm Karita &amp; Company.</p>
+        <p>He was then appointed CEO of a struggling portfolio company, ROI (now Fancrew Inc.), to lead its turnaround. He later led a fund-backed management buyout and continued to grow the business as one of its owners. Working with customer feedback data from multi-site service businesses, he developed an analytical method that combines multiple data sources to identify the drivers of performance.</p>
+        <p>He founded SynapXis in August 2026.</p>
+        <ul class="roles">
+          <li>Special Advisor, Fancrew Inc.</li>
+          <li>Advisor, Karita &amp; Company</li>
+          <li>Chair, VoR Subcommittee, Digital Committee, Shokudanren (Japanese federation of restaurant industry associations)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="partners">
+  <div class="wrap">
+    <p class="label">Partner</p>
+    <h2>Partner</h2>
+    <div class="pcard">
+      <p class="pname">4C Inc.</p>
+      <dl>
+        <dt>Company</dt>
+        <dd>A corporate training company that designs and delivers training programs.</dd>
+        <dt>Working with SynapXis</dt>
+        <dd>We survey and analyze how participants change before and after 4C&rsquo;s training, and conduct employee satisfaction surveys alongside the programs.</dd>
+      </dl>
+      <p class="more"><a href="https://4c-k.com/" target="_blank" rel="noopener">Visit 4C (Japanese)</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="company">
+  <div class="wrap">
+    <p class="label">Company</p>
+    <h2>Company profile</h2>
+    <table>
+      <tbody>
+        <tr><th>Name</th><td>SynapXis Inc.</td></tr>
+        <tr><th>Founded</th><td>August 12, 2026</td></tr>
+        <tr><th>Representative</th><td>Takato Yamaguchi, Representative Director &amp; CEO</td></tr>
+        <tr><th>Address</th><td>SANNO BRIDGE C02, 2-5-6 Sanno, Ota-ku, Tokyo 143-0023, Japan<br>3 minutes&rsquo; walk from the West Exit of JR Omori Station</td></tr>
+        <tr><th>Business</th><td>Data analytics and management consulting / advisory services / speaking, writing and editorial supervision</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <p class="label">Contact</p>
+    <h2>Get in touch</h2>
+    <p class="sub">We welcome enquiries about analytics projects, advisory engagements and speaking. Please write to us by email; we reply in English or Japanese.</p>
+    <div class="ctrow">
+      <div class="tel">
+        <small>Phone / Email</small>
+        +81-50-1785-1024
+        <span class="mailline mailto" data-u="info" data-d="synapxis.jp"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fbar">
+    <span>SynapXis Inc.</span>
+    <span class="flinks"><a href="../" lang="ja">日本語サイト</a></span>
+    <span>&copy; 2026 SynapXis Inc.</span>
+  </div>
+</footer>
+
+<script>
+// メールアドレスはHTMLに直書きせず、表示時に組み立てる（収集ボット対策）
+document.querySelectorAll('.mailto').forEach(function(el){
+  var a = document.createElement('a');
+  var addr = el.dataset.u + String.fromCharCode(64) + el.dataset.d;
+  a.href = 'mai' + 'lto:' + addr;
+  a.textContent = addr;
+  el.appendChild(a);
+});
+</script>
+<script>
+(function(){
+  var cv = document.getElementById('net');
+  if(!cv || !cv.getContext) return;
+  var ctx = cv.getContext('2d');
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var W=0, H=0, DPR=1, FOCAL=760;
+  var N = 150, pts = [], links = [];
+
+  // 3つのデータ源（層）に分けて生成する：層ごとに色が違う
+  var LAYERS = [
+    {c:'213,237,255', z:-160},   // 顧客の評価
+    {c:'46,166,255',  z:  40},   // 販売・業務
+    {c:'176,141,87',  z: 220}    // 掛け合わせて生まれる示唆
+  ];
+
+  function build(){
+    pts.length = 0;
+    for(var i=0;i<N;i++){
+      var L = LAYERS[i % 3];
+      var t = Math.random()*Math.PI*2;
+      var r = 130 + Math.pow(Math.random(),0.55)*310;
+      pts.push({
+        x: Math.cos(t)*r,
+        y: (Math.random()-0.5)*430,
+        z: L.z + (Math.random()-0.5)*190 + Math.sin(t)*r*0.55,
+        c: L.c,
+        s: 0.7 + Math.random()*1.6,
+        hub: Math.random() < 0.06
+      });
+    }
+    // 近い点同士だけを結ぶ（＝データ同士のつながり）
+    links.length = 0;
+    for(var a=0;a<pts.length;a++){
+      for(var b=a+1;b<pts.length;b++){
+        var dx=pts[a].x-pts[b].x, dy=pts[a].y-pts[b].y, dz=pts[a].z-pts[b].z;
+        var d2=dx*dx+dy*dy+dz*dz;
+        if(d2 < 24000) links.push([a,b,Math.sqrt(d2)]);
+      }
+    }
+  }
+
+  function resize(){
+    DPR = Math.min(window.devicePixelRatio||1, 2);
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = W*DPR; cv.height = H*DPR;
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+  }
+
+  var rot = -0.35;
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    var cx = W*0.66, cy = H*0.5;
+    var sin = Math.sin(rot), cos = Math.cos(rot);
+    var proj = [];
+
+    for(var i=0;i<pts.length;i++){
+      var p = pts[i];
+      var x = p.x*cos - p.z*sin;
+      var z = p.x*sin + p.z*cos;
+      var k = FOCAL/(FOCAL + z + 520);
+      proj.push({x: cx + x*k, y: cy + p.y*k, k:k, p:p});
+    }
+
+    for(var j=0;j<links.length;j++){
+      var A = proj[links[j][0]], B = proj[links[j][1]];
+      var depth = (A.k + B.k)/2;
+      var a = (1 - links[j][2]/155) * Math.pow(depth,3.2) * 0.5;
+      if(a <= 0.008) continue;
+      ctx.strokeStyle = 'rgba(213,237,255,'+a.toFixed(3)+')';
+      ctx.lineWidth = 0.55;
+      ctx.beginPath(); ctx.moveTo(A.x,A.y); ctx.lineTo(B.x,B.y); ctx.stroke();
+    }
+
+    for(var m=0;m<proj.length;m++){
+      var q = proj[m], o = Math.pow(q.k,3)*0.95;
+      var rad = q.p.s*q.k*(q.p.hub?2.6:1);
+      if(q.p.hub){
+        ctx.beginPath();
+        ctx.arc(q.x,q.y,rad*3.4,0,6.2832);
+        ctx.fillStyle = 'rgba('+q.p.c+','+(o*0.10).toFixed(3)+')';
+        ctx.fill();
+      }
+      ctx.beginPath();
+      ctx.arc(q.x,q.y,rad,0,6.2832);
+      ctx.fillStyle = 'rgba('+q.p.c+','+o.toFixed(3)+')';
+      ctx.fill();
+    }
+  }
+
+  var running = true;
+  function loop(){
+    if(!running) return;
+    rot += 0.00085;
+    draw();
+    requestAnimationFrame(loop);
+  }
+
+  function start(){ resize(); build(); draw(); if(!still){ running = true; loop(); } }
+
+  window.addEventListener('resize', function(){ resize(); draw(); });
+  document.addEventListener('visibilitychange', function(){
+    if(document.hidden){ running = false; }
+    else if(!still){ running = true; loop(); }
+  });
+
+  start();
+})();
+</script>
+<a class="totop" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></a>
+<script>
+(function(){var b=document.querySelector('.totop');if(!b)return;
+function f(){b.classList.toggle('show',window.scrollY>600)}
+window.addEventListener('scroll',f,{passive:true});f();})();
+</script>
+</body>
+</html>
