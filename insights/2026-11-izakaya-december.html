@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G8JMDY6XNQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G8JMDY6XNQ');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>払われないキャンセル料の8割は、請求されていない | SynapXis</title>
+<meta name="description" content="キャンセル料が払われなかったケースの8割は、事業者が請求しなかったか免除したものだった。居酒屋の売上は12月も含めて少しずつ回復が続いているが、宴会は小口に置き換わったとみられる。忘年会シーズンを前に、飲食店が回収を仕組みにしておくべき理由を公開データで確かめる。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://synapxis.jp/insights/2026-11-izakaya-december.html">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="払われないキャンセル料の8割は、請求されていない">
+<meta property="og:description" content="キャンセル料が払われなかったケースの8割は、事業者が請求しなかったか免除したものだった。居酒屋の売上は12月も含めて少しずつ回復が続いているが、宴会は小口に置き換わったとみられる。忘年会シーズンを前に、飲食店が回収を仕組みにしておくべき理由を公開データで確かめる。">
+<meta property="og:url" content="https://synapxis.jp/insights/2026-11-izakaya-december.html">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"払われないキャンセル料の8割は、請求されていない","description":"キャンセル料が払われなかったケースの8割は、事業者が請求しなかったか免除したものだった。居酒屋の売上は12月も含めて少しずつ回復が続いているが、宴会は小口に置き換わったとみられる。忘年会シーズンを前に、飲食店が回収を仕組みにしておくべき理由を公開データで確かめる。","datePublished":"2026-11","author":{"@type":"Person","name":"山口敬人","url":"https://synapxis.jp/founder.html"},"publisher":{"@type":"Organization","name":"株式会社SynapXis","url":"https://synapxis.jp/"},"mainEntityOfPage":"https://synapxis.jp/insights/2026-11-izakaya-december.html","isAccessibleForFree":true}
+</script>
+<style>
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:'Hiragino Kaku Gothic ProN','Yu Gothic',YuGothic,'Noto Sans JP',sans-serif;
+  line-height:1.95;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:64px 24px 96px}
+.kicker{font-size:13px;letter-spacing:.14em;color:var(--blue);font-weight:700;margin:0 0 14px}
+h1{font-size:30px;line-height:1.45;margin:0 0 18px;color:var(--navy);letter-spacing:.01em}
+.subtitle{font-size:17px;line-height:1.7;color:var(--muted);margin:-6px 0 18px;font-weight:500}
+.meta{font-size:13px;color:var(--muted);margin:0 0 44px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+h2{font-size:19px;margin:44px 0 14px;color:var(--navy);
+  padding-left:13px;border-left:4px solid var(--blue);line-height:1.5}
+p{margin:0 0 22px;font-size:16.5px}
+b{font-weight:700;color:var(--navy)}
+figure{margin:38px -12px;padding:20px 12px;background:var(--surface);border-radius:10px}
+svg{width:100%;height:auto;display:block}
+.fg-t{font-size:20px;font-weight:700;fill:var(--navy)}
+.fg-s{font-size:13.5px;fill:var(--muted)}
+.fg-grid{stroke:var(--grid);stroke-width:1}
+.fg-axis{stroke:var(--navy);stroke-width:1.5}
+.fg-tick{font-size:13.5px;fill:var(--muted)}
+.fg-note{font-size:13px;fill:var(--muted)}
+.fg-fn{font-size:11.5px;fill:var(--muted)}
+.fg-dot{fill:var(--blue);stroke:var(--bg);stroke-width:2}
+.fg-dot-hi{fill:var(--accent);stroke:var(--bg);stroke-width:2}
+.fg-lab{font-size:13px;fill:var(--text)}
+.fg-lab-hi{font-size:14.5px;font-weight:700;fill:var(--text)}
+.fg-seg-paid{fill:var(--pale)}
+.fg-seg-notreq{fill:var(--accent)}
+.fg-seg-waived{fill:var(--accent);fill-opacity:.55}
+.fg-seg-refused{fill:var(--blue)}
+.fg-val{font-size:14px;font-weight:700;fill:var(--text)}
+.fg-brk{stroke:var(--navy);stroke-width:1.5;fill:none}
+.fg-brk-t{font-size:14px;font-weight:700;fill:var(--navy)}
+.fg-mon{fill:var(--pale);fill-opacity:.55}
+.fg-line-mean{fill:none;stroke:var(--blue);stroke-width:2}
+.fg-line-dec{fill:none;stroke:var(--accent);stroke-width:2.5}
+.fg-key-dec{font-size:14px;font-weight:700;fill:var(--accent)}
+.fg-key-mean{font-size:14px;font-weight:700;fill:var(--blue)}
+.tail{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted);line-height:1.85}
+.tail h3{font-size:13px;letter-spacing:.1em;color:var(--navy);margin:0 0 10px;font-weight:700}
+.tail dl{margin:0 0 22px}
+.tail dt{font-weight:700;color:var(--text);margin-top:9px}
+.tail dd{margin:2px 0 0}
+@media(max-width:600px){
+  .wrap{padding:44px 18px 72px} h1{font-size:24px} p{font-size:16px}
+  figure{margin:32px -18px;border-radius:0}
+}
+
+/* ===== SynapXis サイト共通の配色・書体に統一 ===== */
+:root{
+  --bg:#F7F5F0; --surface:#EFECE4; --text:#1C2430; --muted:#5E6B7A; --line:rgba(13,35,64,.14);
+  --navy:#0D2340; --blue:#2EA6FF; --accent:#8A6636; --green:#3F7F63; --pale:#AEB9C6; --grid:rgba(13,35,64,.10);
+  --navy-bg:#0D2340; --navy-deep:#081A31; --paper:#F7F5F0; --brass:#B08D57; --blue-tint:#D5EDFF;
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0E1721; --surface:#14202C; --text:#E4EAF2; --muted:#A0AEBD; --line:rgba(213,237,255,.16);
+    --navy:#DEE9F7; --blue:#2EA6FF; --accent:#D3AA6C; --green:#6FBF98; --pale:#4A5B6E; --grid:rgba(213,237,255,.12);
+  }
+}
+body{font-family:"Noto Sans JP",system-ui,sans-serif;font-feature-settings:"palt" 1}
+h1,h2{font-family:"Noto Serif JP",serif;font-weight:600}
+.kicker{font-family:"IBM Plex Mono",monospace;font-weight:500;color:var(--accent);font-size:11px;letter-spacing:.22em}
+.tail h3{font-family:"IBM Plex Mono",monospace;letter-spacing:.18em}
+.serieslink{
+  margin:34px 0 0;padding:18px 20px;background:var(--surface);
+  border-left:3px solid var(--brass);font-size:14.5px;line-height:1.85
+}
+.serieslink a{color:var(--navy);border-bottom:1px solid var(--brass);text-decoration:none}
+header{position:sticky;top:0;z-index:50;background-color:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{max-width:720px;padding:0 24px}
+.bar{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--navy)}
+.brand svg{width:26px;height:26px;display:block;flex:none}
+.brand b{font-family:"Noto Serif JP",serif;font-size:19px;font-weight:600;letter-spacing:.04em}
+.back{font-size:13.5px;color:var(--muted);text-decoration:none;border-bottom:1px solid transparent}
+.back:hover{color:var(--navy);border-bottom-color:var(--brass)}
+.cta{background-color:var(--navy-bg);color:var(--paper);padding:56px 0}
+.cta .wrap{max-width:720px;padding:0 24px}
+.ctah{font-family:"Noto Serif JP",serif;font-size:22px;font-weight:600;color:var(--paper);margin:0 0 16px;padding:0;border:0}
+.cta p{color:rgba(247,245,240,.78);font-size:15px;max-width:620px;margin-bottom:26px}
+.btn{display:inline-block;text-decoration:none;background:var(--blue);color:#06203A;font-weight:700;
+  font-size:15px;letter-spacing:.06em;padding:16px 34px;border:1px solid var(--blue)}
+.btn:hover{background:transparent;color:var(--blue-tint)}
+footer{background-color:var(--navy-deep);color:rgba(247,245,240,.5);font-size:12.5px;padding:26px 0}
+footer .wrap{max-width:720px;padding:0 24px}
+.fbar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+.fbar a{color:rgba(247,245,240,.66);text-decoration:none;border-bottom:1px solid rgba(176,141,87,.5)}
+@media print{
+  :root{--bg:#fff;--surface:#fff;--text:#1C2430;--muted:#3F4B58;--line:rgba(13,35,64,.28);--navy:#0D2340}
+  header{position:static}
+  figure,.tail{break-inside:avoid}
+  h2{break-after:avoid}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="../index.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><g fill="#2EA6FF">
+        <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85"/>
+        <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(90 12 12)"/>
+        <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(180 12 12)"/>
+        <polygon points="15.18,10.94 13.06,8.82 18.15,2.60 21.40,5.85" transform="rotate(270 12 12)"/>
+      </g></svg>
+      <b>SynapXis</b>
+    </a>
+    <a class="back" href="index.html">記事一覧へ</a>
+  </div>
+</header>
+
+<div class="wrap">
+<p class="kicker">SYNAPXIS INSIGHTS &nbsp;/&nbsp; 10</p>
+<h1>払われないキャンセル料の8割は、請求されていない</h1>
+<p class="subtitle">忘年会シーズンに入る前に。12月の宴会が小口になるほど、キャンセル料は人手では回収しきれない</p>
+<p class="meta">2026年11月　|　居酒屋の12月と、キャンセル料の回収</p>
+
+<p>キャンセル料が払われないとき、回収は客と店のどちらの側で止まっているのか。消費者庁の調査では、キャンセル料が払われなかった人のうち、支払いを求められたのに払わなかった人は一部にすぎず、大半は事業者の側が請求しなかったか、免除していた。企業の忘・新年会の実施率は、コロナ禍前の78.4％から2025年のシーズンには57.2％まで下がった。一方で居酒屋の売上はコロナ後も少しずつ回復が続いており、12月もその流れから外れていない。そのなかで、宴会は大口から小口に置き換わったと考えられる。1件が小さい予約が増えるほど、請求されないまま消えるキャンセル料は増えやすいとみられる。</p>
+
+<h2>居酒屋の売上は回復が続き、12月もその流れの中にある</h2>
+
+<p>協会の調査は会員社の全店売上を集計しており、2024年5月までは2019年同月との比も載せていた。それ以降は、公表されている前年同月比を掛け継いで2019年と比べた。2019年同月比が74.2％とは、2019年12月の売上を100としたとき、2025年12月が74.2にあたるという意味である。</p>
+
+<p>パブ・居酒屋の売上は、12か月の平均（以下、年平均）で見ると2019年の66.4％（2023年）、70.6％（2024年）、73.3％（2025年）と、コロナ後も少しずつ回復が続いている。12月も69.1％、69.8％、74.2％と、同じ流れで戻ってきた。</p>
+
+<figure><svg viewBox="0 0 700 582" role="img" aria-label="パブ・居酒屋の売上 2019年同月比の年平均と12月の推移" xmlns="http://www.w3.org/2000/svg">
+<text x="34" y="34" class="fg-t">12か月の平均も12月も、2023年から上がっている</text>
+<text x="34" y="60" class="fg-s">パブ・居酒屋の売上　2019年の同じ月を100%としたときの水準</text>
+<text x="34" y="88" class="fg-note">淡い点は各年の12か月それぞれの値。線は12か月の平均と12月。</text>
+<line x1="92" y1="432.0" x2="590" y2="432.0" class="fg-grid"/>
+<text x="80" y="437.0" class="fg-tick" text-anchor="end">56%</text>
+<line x1="92" y1="382.0" x2="590" y2="382.0" class="fg-grid"/>
+<text x="80" y="387.0" class="fg-tick" text-anchor="end">60%</text>
+<line x1="92" y1="332.0" x2="590" y2="332.0" class="fg-grid"/>
+<text x="80" y="337.0" class="fg-tick" text-anchor="end">64%</text>
+<line x1="92" y1="282.0" x2="590" y2="282.0" class="fg-grid"/>
+<text x="80" y="287.0" class="fg-tick" text-anchor="end">68%</text>
+<line x1="92" y1="232.0" x2="590" y2="232.0" class="fg-grid"/>
+<text x="80" y="237.0" class="fg-tick" text-anchor="end">72%</text>
+<line x1="92" y1="182.0" x2="590" y2="182.0" class="fg-grid"/>
+<text x="80" y="187.0" class="fg-tick" text-anchor="end">76%</text>
+<line x1="92" y1="132.0" x2="590" y2="132.0" class="fg-grid"/>
+<text x="80" y="137.0" class="fg-tick" text-anchor="end">80%</text>
+<circle cx="162.0" cy="405.8" r="5" class="fg-mon"/>
+<circle cx="162.0" cy="325.8" r="5" class="fg-mon"/>
+<circle cx="162.0" cy="325.8" r="5" class="fg-mon"/>
+<circle cx="162.0" cy="322.0" r="5" class="fg-mon"/>
+<circle cx="162.0" cy="303.2" r="5" class="fg-mon"/>
+<circle cx="162.0" cy="305.8" r="5" class="fg-mon"/>
+<circle cx="162.0" cy="254.5" r="5" class="fg-mon"/>
+<circle cx="162.0" cy="300.8" r="5" class="fg-mon"/>
+<circle cx="162.0" cy="268.3" r="5" class="fg-mon"/>
+<circle cx="162.0" cy="239.5" r="5" class="fg-mon"/>
+<circle cx="162.0" cy="300.8" r="5" class="fg-mon"/>
+<circle cx="162.0" cy="268.3" r="5" class="fg-mon"/>
+<text x="162.0" y="458" class="fg-tick" text-anchor="middle">2023年</text>
+<circle cx="321.0" cy="310.8" r="5" class="fg-mon"/>
+<circle cx="321.0" cy="237.0" r="5" class="fg-mon"/>
+<circle cx="321.0" cy="259.5" r="5" class="fg-mon"/>
+<circle cx="321.0" cy="268.3" r="5" class="fg-mon"/>
+<circle cx="321.0" cy="235.7" r="5" class="fg-mon"/>
+<circle cx="321.0" cy="249.5" r="5" class="fg-mon"/>
+<circle cx="321.0" cy="224.5" r="5" class="fg-mon"/>
+<circle cx="321.0" cy="269.5" r="5" class="fg-mon"/>
+<circle cx="321.0" cy="232.0" r="5" class="fg-mon"/>
+<circle cx="321.0" cy="198.2" r="5" class="fg-mon"/>
+<circle cx="321.0" cy="243.3" r="5" class="fg-mon"/>
+<circle cx="321.0" cy="259.5" r="5" class="fg-mon"/>
+<text x="321.0" y="458" class="fg-tick" text-anchor="middle">2024年</text>
+<circle cx="480.0" cy="272.0" r="5" class="fg-mon"/>
+<circle cx="480.0" cy="213.2" r="5" class="fg-mon"/>
+<circle cx="480.0" cy="252.0" r="5" class="fg-mon"/>
+<circle cx="480.0" cy="235.7" r="5" class="fg-mon"/>
+<circle cx="480.0" cy="193.3" r="5" class="fg-mon"/>
+<circle cx="480.0" cy="229.5" r="5" class="fg-mon"/>
+<circle cx="480.0" cy="190.8" r="5" class="fg-mon"/>
+<circle cx="480.0" cy="192.0" r="5" class="fg-mon"/>
+<circle cx="480.0" cy="223.2" r="5" class="fg-mon"/>
+<circle cx="480.0" cy="159.5" r="5" class="fg-mon"/>
+<circle cx="480.0" cy="217.0" r="5" class="fg-mon"/>
+<circle cx="480.0" cy="204.5" r="5" class="fg-mon"/>
+<text x="480.0" y="458" class="fg-tick" text-anchor="middle">2025年</text>
+<polyline points="162.0,302.0 321.0,249.5 480.0,215.8" class="fg-line-mean"/>
+<polyline points="162.0,268.3 321.0,259.5 480.0,204.5" class="fg-line-dec"/>
+<circle cx="162.0" cy="302.0" r="7" class="fg-dot"/>
+<circle cx="162.0" cy="268.3" r="8" class="fg-dot-hi"/>
+<text x="148.0" y="256.3" class="fg-lab-hi" text-anchor="end">69.1%</text>
+<text x="176.0" y="324.0" class="fg-lab" text-anchor="start">66.4%</text>
+<circle cx="321.0" cy="249.5" r="7" class="fg-dot"/>
+<circle cx="321.0" cy="259.5" r="8" class="fg-dot-hi"/>
+<text x="307.0" y="281.5" class="fg-lab-hi" text-anchor="end">69.8%</text>
+<text x="335.0" y="237.5" class="fg-lab" text-anchor="start">70.6%</text>
+<circle cx="480.0" cy="215.8" r="7" class="fg-dot"/>
+<circle cx="480.0" cy="204.5" r="8" class="fg-dot-hi"/>
+<text x="466.0" y="192.5" class="fg-lab-hi" text-anchor="end">74.2%</text>
+<text x="494.0" y="237.8" class="fg-lab" text-anchor="start">73.3%</text>
+<text x="502.0" y="178.5" class="fg-key-dec">12月</text>
+<text x="502.0" y="255.8" class="fg-key-mean">12か月の平均</text>
+<line x1="92" y1="432" x2="590" y2="432" class="fg-axis"/>
+<text x="34" y="494" class="fg-fn">12月と12か月の平均との差は、3年とも最大2.7ポイント。</text>
+<text x="34" y="513" class="fg-fn">日本フードサービス協会 会員社の全店データ。2025年12月は36社・2,107店で、チェーンが中心。</text>
+<text x="34" y="532" class="fg-fn">2024年6月以降の2019年比は、協会が公表する前年同月比を掛け継いで算出した近似値。</text>
+<text x="34" y="551" class="fg-fn">2019年比が直接公表されている2024年1〜5月で比べると、差は最大1.8ポイント。</text>
+<text x="694" y="574" text-anchor="end" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;fill:var(--muted);opacity:.7">© 2026 SynapXis Inc.</text>
+</svg></figure>
+
+<p>12月と年平均との差は、3年とも最大で2.7ポイントにとどまる。2025年でいえば、12月は12か月のうち5番目で、最も低い1月の68.8％と最も高い10月の77.8％の間に収まる。年末に集中しがちな企業の忘年会が減少しても、12月も他の月と同様に回復途上にある。年間の売上に占める12月の比重は、コロナ禍前と大きく変わっていないと読める。</p>
+
+<h2>忘年会の主流は、小グループに移っている</h2>
+
+<p>協会は2025年12月の動きについて、忘年会の主流が小グループや個人の宴会に移り、月後半から年末の休みにかけてそれが好調で、飲酒業態の客数を押し上げたとしている。同じ月のパブ・居酒屋の客数は、前年同月比で103.9％だった。</p>
+
+<p>予約のデータにも、同じ方向の変化が見える。飲食店向けの予約・顧客管理システムを提供するTableCheckの集計では、2023年12月（17日時点）に10人以上の予約が占める割合は39.0％で、2019年より5.5ポイント低かった。</p>
+
+<h2>払われなかったキャンセル料の多くは、請求されていない</h2>
+
+<p>消費者庁が2023年7月に、キャンセル料が発生する時期にキャンセルした2,000人に尋ねた調査がある。キャンセル料を支払った人は67.6％。支払わなかった人の内訳は、支払いを求められなかったが14.5％、理由を伝えて免除されたが12.1％で、求められたのに支払わなかった人は5.9％だった。払われなかった32.5％のうち82％は、事業者の側が請求しなかったか、免除したものにあたる。この調査は飲食店に限らず、宿泊や航空を含む全業種のキャンセル経験者が対象である。</p>
+
+<figure><svg viewBox="0 0 700 400" role="img" aria-label="キャンセル料の支払状況の内訳" xmlns="http://www.w3.org/2000/svg">
+<text x="34" y="34" class="fg-t">払われなかったキャンセル料の多くは、請求されていない</text>
+<text x="34" y="60" class="fg-s">キャンセル料が発生する時期にキャンセルした2,000人の支払状況</text>
+<rect x="41.0" y="150" width="416.7" height="46" rx="3" class="fg-seg-paid"/>
+<text x="249.4" y="178.0" class="fg-val" text-anchor="middle">67.6</text>
+<rect x="459.7" y="150" width="87.8" height="46" rx="3" class="fg-seg-notreq"/>
+<text x="503.6" y="178.0" class="fg-val" text-anchor="middle">14.5</text>
+<rect x="549.5" y="150" width="72.9" height="46" rx="3" class="fg-seg-waived"/>
+<text x="586.0" y="178.0" class="fg-val" text-anchor="middle">12.1</text>
+<rect x="624.5" y="150" width="34.5" height="46" rx="3" class="fg-seg-refused"/>
+<text x="641.7" y="178.0" class="fg-val" text-anchor="middle">5.9</text>
+<path d="M460.7,140 V128 H621.5 V140" class="fg-brk"/>
+<text x="621.5" y="116" class="fg-brk-t" text-anchor="end">事業者が請求しなかった・免除した　計26.6%</text>
+<path d="M625.5,206 V218 H658.0 V206" class="fg-brk"/>
+<text x="658.0" y="240" class="fg-brk-t" text-anchor="end">客が払わなかった　5.9%</text>
+<rect x="40" y="270" width="14" height="14" rx="2" class="fg-seg-paid"/>
+<text x="62" y="282" class="fg-lab">支払った　67.6%</text>
+<rect x="360" y="270" width="14" height="14" rx="2" class="fg-seg-notreq"/>
+<text x="382" y="282" class="fg-lab">請求されなかった　14.5%</text>
+<rect x="40" y="296" width="14" height="14" rx="2" class="fg-seg-waived"/>
+<text x="62" y="308" class="fg-lab">理由を伝えて免除された　12.1%</text>
+<rect x="360" y="296" width="14" height="14" rx="2" class="fg-seg-refused"/>
+<text x="382" y="308" class="fg-lab">請求されたが払わなかった　5.9%</text>
+<text x="34" y="334" class="fg-fn">単位は%。消費者庁「キャンセル料に関する消費者の意識調査」（2023年7月実施）。</text>
+<text x="34" y="353" class="fg-fn">回答者は飲食店に限らず、宿泊・航空などを含む全業種のキャンセル経験者。</text>
+<text x="34" y="372" class="fg-fn">「支払った」は事前決済で清算された場合を含む。四捨五入のため合計は100.1%。</text>
+<text x="694" y="392" text-anchor="end" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;fill:var(--muted);opacity:.7">© 2026 SynapXis Inc.</text>
+</svg></figure>
+
+<p>同じ調査では、キャンセルした契約の62.7％が事前決済だった。キャンセル料を取る前に、代金の決済がすでに済んでいる契約が多いということだ。店の側の実態については、別の調査がある。飲食店ドットコムを運営するシンクロ・フードが2026年4月に207店に聞いた調査では、予期せぬキャンセルへの対策として事前決済を行う店は4.6％だった。</p>
+
+<h2>他の業界は、取る金額を予約の前に決めている</h2>
+
+<p>旅行では、旅行業者が定める約款に観光庁長官の認可が要り、国が示す標準旅行業約款と同じものを使えば認可を受けたものとみなされる。取消料はその約款の取消料表に書かれている。宿泊では、観光庁のモデル宿泊約款が1985年から示されており、申込金を違約金に充てる手順まで定めている。どちらの業界でも、いくら取るかは予約の前に決まっている。</p>
+
+<p>ただし、金額を決めただけでは回収は進まないという指摘もある。宿泊業向けの回収支援事業者は、請求が電話や郵送に頼っていて苦情も多いため、回収できないことを前提に事業者が免除する慣行が広がり、客の側でも、キャンセルしても請求されないという受け止めが定着したと指摘している（トラベルボイス、2024年7月）。</p>
+
+<p>制度の議論も、解約料を事前に説明する方向に向かっている。消費者庁の消費者契約法検討会が2026年9月にまとめた中間取りまとめ（案）は、「平均的な損害」を超える解約料を無効とする規定は今回見直さず、解約料の算定根拠などを事業者が説明する努力義務を広げる方向を示した。</p>
+
+<h2>宴会が小口になるほど、回収の仕組みが要る</h2>
+
+<p>居酒屋の売上は少しずつ回復が続き、12月もその流れから外れていない。変わったのは予約の単位のほうで、協会の説明やTableCheckの集計からは、大口の宴会が少人数の予約に置き換わりつつあることがうかがえる。そうした予約が連絡なく消えたとき、1件あたりのキャンセル料は小さく、電話や督促で取りに行く手間に見合いにくい。請求をあきらめる店が増えれば、宿泊業で起きたのと同じように、無断でキャンセルしても払わずに済むという受け止めが客の側に広がると考えられる。</p>
+
+<p>件数が多く1件が小さい予約ほど、金額を予約の前に示し、事前決済やカード登録で自動的に回収する仕組みが要る。飲食店で事前決済を行う店は、先の調査で4.6％にとどまる。予約が集中する忘年会シーズンに入る前に、整えておきたい仕組みである。</p>
+
+
+
+<div class="tail">
+<h3>この記事の範囲</h3>
+<p style="margin:0 0 22px">日本フードサービス協会の調査は会員社の全店データで、パブ・居酒屋は2025年12月時点で36社・2,107店にあたる。チェーンが中心で、個人店の12月はこの数字に含まれない。2024年6月以降の2019年同月比は前年同月比の掛け継ぎで、回答社が月ごとに入れ替わるため近似値になる。2019年同月比が直接公表されている2024年1〜5月で掛け継ぎ値と比べると、差は最大1.8ポイントだった。消費者庁の調査は全業種のキャンセル経験者が対象で、飲食店の予約に限った支払状況は公表されていない。人数別の無断キャンセル率を示す公開データは見当たらず、少人数の予約ほど無断キャンセルが多いかどうかは扱っていない。</p>
+<h3>用語</h3>
+<dl>
+<dt>2019年同月比</dt><dd>コロナ禍前の2019年の同じ月の売上を100%としたときの水準。季節による増減の影響を受けずに、コロナ禍前と比べられる。</dd>
+<dt>掛け継ぎ</dt><dd>前年同月比を年ごとに掛け合わせて、さらに前の年との比を求める方法。2025年12月の2019年比は、2024年12月の2019年比に2025年12月の前年同月比を掛けて求めた。</dd>
+<dt>事前決済</dt><dd>予約の時点で代金を決済しておく方法。キャンセルの際は、決済済みの代金からキャンセル料を差し引いて清算できる。</dd>
+<dt>平均的な損害</dt><dd>消費者契約法第9条第1項第1号の考え方。キャンセル料のうち、同じ種類の契約のキャンセルで事業者に通常生じる損害の額を超える部分は無効になる。</dd>
+<dt>標準旅行業約款・モデル宿泊約款</dt><dd>旅行業と宿泊業で、国が示す約款のひな形。標準旅行業約款は旅行業法に基づき国が定め、モデル宿泊約款は観光庁が示している。</dd>
+</dl>
+<h3>出典</h3>
+<p style="margin:0 0 22px">日本フードサービス協会「外食産業市場動向調査」月次結果報告（2023年1月〜2025年12月）。東京商工リサーチ「忘・新年会に関するアンケート」（2025年第2回、2026年）。消費者庁「キャンセル料に関する消費者の意識調査」報告書（2024年1月、調査は2023年7月実施）。シンクロ・フード「飲食店の予約キャンセルに関する実態調査」（2026年4月実施）。TableCheck データブログ（2023年12月22日更新）。観光庁「モデル宿泊約款」、標準旅行業約款（平成16年国土交通省告示第1593号）。消費者庁「現代社会における消費者取引の在り方を踏まえた消費者契約法検討会 中間取りまとめ（案）」（2026年9月）。トラベルボイス「宿泊施設のキャンセル料回収の実態は？」（2024年7月23日）。</p>
+<h3>注</h3>
+<dl>
+<dd>払われなかったキャンセル料の多くを事業者が得られていない可能性は、消費者庁の研究会に提出された有賀敦紀氏の資料「キャンセル料に関する消費者の意識調査」（2024年1月）でも示されている。</dd>
+</dl>
+</div>
+<h3>本記事の利用について</h3>
+<p style="margin:0 0 22px">出典として「株式会社SynapXis」と本記事のURLを明記いただければ、引用・紹介は自由に行っていただけます。図版も同じ条件で転載いただけます。社内資料への引用は連絡不要です。全文の転載、および有償のセミナーや商用出版物でのご利用については、事前に<a href="../contact.html" style="color:var(--navy);border-bottom:1px solid var(--brass);text-decoration:none">お問い合わせ</a>ください。引用いただいた際にお知らせいただけると、今後の題材選びの参考になります。</p>
+</div>
+
+<div class="cta">
+  <div class="wrap">
+    <h2 class="ctah">自社のデータで検証しませんか</h2>
+    <p>この記事はすべて公開データによる分析です。自社が持つデータを掛け合わせれば、より踏み込んだことが分かります。初回のご相談は無償です。</p>
+    <a class="btn" href="../contact.html">お問い合わせへ</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap fbar">
+    <span>株式会社SynapXis</span>
+    <span><a href="../index.html">トップ</a>　<a href="../founder.html">代表</a>　<a href="index.html">分析記事</a>　<a href="../news.html">お知らせ</a>　<a href="../privacy.html">プライバシーポリシー</a></span>
+    <span>&copy; 2026 SynapXis Inc.</span>
+  </div>
+</footer>
+
+</body>
+</html>
