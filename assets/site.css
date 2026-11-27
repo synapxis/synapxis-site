@@ -1,0 +1,32 @@
+/* SynapXis サイト共通（2026-11 刷新） */
+:root{--bg:#FFFFFF;--bg2:#F6F9FE;--card:#FFFFFF;--ink:#0B1220;--tx2:#3B4658;--mut:#64748B;--bd:#E3EAF5;--bd2:#CBD5E1;--acc:#2563EB;--cAbg:#EAF1FF;--cAfg:#1D4ED8;--cBbg:#E3F6FA;--cBfg:#0E7490;--cCbg:#EEF0FF;--cCfg:#4338CA;--deep:#0B1220;--hdr:rgba(255,255,255,.86);--grid:#D5DDEA;--g1:#E3EEFF;--g2:#DDF7FB;--pill:#F1F5F9;--l1:#0B1220;--l2:#334155;--l3:#7C8AA0;--ring:#CBD5E1;--thin:#D5DEEA;--core:#FFFFFF;--lgd:block;--lgw:none;--btn:#0B1220;color-scheme:light dark}
+@media(prefers-color-scheme:dark){:root{--bg:#0A0F1A;--bg2:#0F1726;--card:#111A2B;--ink:#E8EEF7;--tx2:#B4BFCF;--mut:#8C98AB;--bd:#1F2A3D;--bd2:#2D3A55;--acc:#7AB0FF;--cAbg:#152A52;--cAfg:#9DC0FF;--cBbg:#0F2E35;--cBfg:#6FD8EA;--cCbg:#22245A;--cCfg:#B3BBFF;--deep:#16213A;--hdr:rgba(10,15,26,.82);--grid:#1C2638;--g1:rgba(37,99,235,.20);--g2:rgba(6,182,212,.12);--pill:#172033;--l1:#E8EEF7;--l2:#AFBACB;--l3:#6B7891;--ring:#2A3650;--thin:#223049;--core:#0A0F1A;--lgd:none;--lgw:block;--btn:#2563EB}}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink)}
+.sx a{color:var(--acc);text-decoration:none}
+.sx{font-family:"Noto Sans JP",system-ui,sans-serif;font-feature-settings:"palt" 1;-webkit-font-smoothing:antialiased;line-height:1.7}
+.sx *{box-sizing:border-box}
+.sx-header{position:sticky;top:0;z-index:50;background:var(--hdr);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--bd);font-family:"Noto Sans JP",system-ui,sans-serif}
+.sx-header .sx-in{max-width:1200px;margin:0 auto;padding:12px 32px;min-height:72px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap}
+.sx-brand{display:flex;align-items:center;color:var(--ink)!important;text-decoration:none;border:0!important}
+.sx-brand svg{height:26px;width:auto;display:block}
+.sx-tabs{display:flex;gap:4px;padding:4px;border-radius:999px;background:var(--pill);font-size:14px}
+.sx-tabs a{padding:9px 18px;border-radius:999px;color:var(--mut)!important;font-weight:500;text-decoration:none;border:0!important;line-height:1.4}
+.sx-tabs a[aria-current]{background:var(--card);color:var(--ink)!important;font-weight:700;box-shadow:0 1px 3px rgba(15,23,42,.18)}
+.sx-cta{padding:11px 22px;border-radius:999px;background:var(--btn);color:#FFFFFF!important;font-size:14px;font-weight:700;text-decoration:none;border:0!important;line-height:1.4}
+.sx-footer{background:#0B1220;color:#CBD5E1;border-top:1px solid var(--bd);font-family:"Noto Sans JP",system-ui,sans-serif}
+.sx-footer .sx-in{max-width:1200px;margin:0 auto;padding:48px 32px;display:flex;justify-content:space-between;align-items:flex-start;gap:28px;flex-wrap:wrap}
+.sx-footer .sx-brand{color:#FFFFFF!important}
+.sx-footer nav{display:flex;gap:10px 24px;flex-wrap:wrap;font-size:13px;line-height:1.6;max-width:760px}
+.sx-footer nav a{color:#CBD5E1!important;text-decoration:none;border:0!important}
+.sx-footer nav a:hover{color:#FFFFFF!important}
+.sx-footer small{display:block;width:100%;font-size:12px;color:#8C98AB}
+.sx-header a:focus-visible,.sx-footer a:focus-visible,.sx a:focus-visible{outline:2px solid #FF6A3D;outline-offset:3px}
+.cd{position:relative;transition:transform .25s,box-shadow .25s}.cd:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(37,99,235,.14)}
+.cd::after{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:linear-gradient(120deg,#2563EB,#06B6D4,#6366F1);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .25s;pointer-events:none}.cd:hover::after{opacity:1}
+@keyframes rv{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@supports (animation-timeline:view()){.rv>*{animation:rv linear both;animation-timeline:view();animation-range:entry 0% entry 35%}}
+@keyframes fi{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.fi{animation:fi .8s cubic-bezier(.2,.7,.2,1) both}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media print{.sx-header{position:static}.rv>*{animation:none!important}}

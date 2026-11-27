@@ -32,7 +32,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
   color-scheme:light dark;
@@ -416,6 +416,35 @@ h1{letter-spacing:0}
 .roles{list-style:none;margin-top:18px;font-size:14px;color:var(--muted);line-height:1.9}
 .roles li{padding-left:14px;position:relative}
 .roles li::before{content:"";position:absolute;left:0;top:.85em;width:6px;height:1px;background:var(--brass)}
+
+/* ===== 2026-11 刷新：配色・書体の上書き ===== */
+:root{
+  --navy:#0B1220;--navy-deep:#0B1220;--brass:#2563EB;--brass-text:#2563EB;
+  --blue:#2563EB;--blue-tint:#BFE3FF;--paper:#FFFFFF;
+  --ink:#1E293B;--muted:#5B6678;--rule:#E3EAF5;
+  --bg:#FFFFFF;--bg-alt:#F6F9FE;--surface:#F6F9FE;--heading:#0B1220;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#0A0F1A;--bg-alt:#0F1726;--surface:#111A2B;
+    --heading:#E8EEF7;--ink:#D5DDE8;--muted:#8C98AB;
+    --rule:#1F2A3D;--brass-text:#7AB0FF;--brass:#7AB0FF;--blue:#7AB0FF;
+  }
+}
+h1,h2,h3,.ptitle,.media,.org{font-family:"Noto Sans JP",system-ui,sans-serif!important}
+h1{font-weight:900}
+h2,h3,.ptitle{font-weight:700}
+.label,.pdate,.yr,.date,.role{font-family:"JetBrains Mono",monospace!important}
+.zz-head{background:radial-gradient(50% 80% at 85% 20%,rgba(37,99,235,.14) 0%,transparent 70%),var(--bg)!important;color:var(--heading)!important;border-bottom:1px solid var(--rule)}
+.head .label{color:var(--brass-text)!important;opacity:1!important}
+.head .role{color:var(--muted)!important}
+.cta{background:linear-gradient(120deg,#1D4ED8 0%,#2563EB 40%,#06B6D4 100%)!important;color:#FFFFFF!important}
+.cta h2{color:#FFFFFF!important}
+.cta p{color:rgba(255,255,255,.92)!important}
+.btn{background:#FFFFFF!important;color:#1D4ED8!important;border:0!important;border-radius:999px!important;padding:16px 32px!important;letter-spacing:.02em!important}
+.btn:hover{opacity:.9}
+main a,.wrap a{overflow-wrap:anywhere}
+@media print{.sx-header{position:static}}
 </style>
 </head>
 <body>
