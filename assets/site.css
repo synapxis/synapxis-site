@@ -22,8 +22,8 @@ body{margin:0;background:var(--bg);color:var(--ink)}
 .sx-footer nav a:hover{color:#FFFFFF!important}
 .sx-footer small{display:block;width:100%;font-size:12px;color:#8C98AB}
 .sx-header a:focus-visible,.sx-footer a:focus-visible,.sx a:focus-visible{outline:2px solid #FF6A3D;outline-offset:3px}
-.cd{position:relative;transition:transform .25s,box-shadow .25s}.cd:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(37,99,235,.14)}
-.cd::after{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:linear-gradient(120deg,#2563EB,#06B6D4,#6366F1);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .25s;pointer-events:none}.cd:hover::after{opacity:1}
+.cd{position:relative;transition:transform .25s,box-shadow .25s}a.cd:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(37,99,235,.14)}
+.cd::after{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:linear-gradient(120deg,#2563EB,#06B6D4,#6366F1);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .25s;pointer-events:none}a.cd:hover::after,a.cd:focus-visible::after{opacity:1}
 @keyframes rv{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
 @supports (animation-timeline:view()){.rv>*{animation:rv linear both;animation-timeline:view();animation-range:entry 0% entry 35%}}
 @keyframes fi{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
